@@ -1,9 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  basePath: "/IoTPage",
   output: "export",
-  reactStrictMode: true,
+  basePath: "/IoTPage",
+  images: {
+    unoptimized: true,
+  },
 };
 
 export default nextConfig;
