@@ -7,7 +7,6 @@ let interval: any;
 type Card = {
   id: number;
   name: string;
-  designation: string;
   content: React.ReactNode;
 };
 
