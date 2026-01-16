@@ -1,4 +1,3 @@
-// app/projects/zigbee-alarm/page.tsx
 "use client";
 
 import { BackgroundBeams } from "@/components/ui/background-beams";
@@ -33,25 +32,25 @@ export default function ZigBeeAlarmPage() {
       id: 1,
       name: "Sebastian Szymański",
       designation: "Lead Developer",
-      image: "/team/sebastian.jpg",
+      image: "../user.jpg",
     },
     {
       id: 2,
       name: "Cezary Piernikowski",
       designation: "Hardware Engineer",
-      image: "/team/cezary.jpg",
+      image: "../user.jpg",
     },
     {
       id: 3,
       name: "Kamil Łania",
       designation: "Systems Architect",
-      image: "/team/kamil.jpg",
+      image: "../user.jpg",
     },
     {
       id: 4,
       name: "Tomasz Siudmiak",
       designation: "Security Specialist",
-      image: "/team/tomasz.jpg",
+      image: "../user.jpg",
     },
   ];
 
@@ -178,8 +177,8 @@ export default function ZigBeeAlarmPage() {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/7522609/pexels-photo-7522609.jpeg')] bg-cover bg-center" />
-          <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-green-900/30" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-br from-black/80 via-black/60 to-green-900/30" />
+          <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent" />
         </div>
 
         {/* Gradient Orbs */}
@@ -198,18 +197,18 @@ export default function ZigBeeAlarmPage() {
             {/* Badge */}
             <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6">
               <span className="text-sm font-medium text-white">
-                University IoT Security Project
+                IoT ZigBee Security Project
               </span>
             </div>
 
             {/* Main Title */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-green-400 via-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-green-400 via-emerald-400 to-cyan-400 bg-clip-text text-transparent">
                 ZigBee Alarm System
               </span>
             </h1>
 
-            <div className="h-1 w-32 bg-gradient-to-r from-green-500 to-emerald-500 mx-auto rounded-full mb-8" />
+            <div className="h-1 w-32 bg-linear-to-r from-green-500 to-emerald-500 mx-auto rounded-full mb-8" />
 
             {/* Subtitle */}
             <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed">
@@ -240,7 +239,7 @@ export default function ZigBeeAlarmPage() {
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="#demo">
                 <HoverBorderGradient
-                  containerClassName="rounded-full"
+                  containerClassName="rounded-full w-full"
                   as="button"
                   className="bg-black text-white flex items-center space-x-2 px-8 py-4 text-lg"
                 >
@@ -249,7 +248,7 @@ export default function ZigBeeAlarmPage() {
                 </HoverBorderGradient>
               </Link>
               <Link href="#architecture">
-                <button className="px-10 py-4 rounded-full bg-gradient-to-b from-green-600 to-emerald-600 text-white font-medium text-lg hover:shadow-2xl hover:shadow-green-500/30 transition-all duration-300">
+                <button className="px-10 py-4 rounded-full w-full bg-linear-to-b from-green-600 to-emerald-600 text-white font-medium text-lg hover:shadow-2xl hover:shadow-green-500/30 transition-all duration-300">
                   System Architecture
                 </button>
               </Link>
@@ -340,7 +339,7 @@ export default function ZigBeeAlarmPage() {
       {/* Architecture Section */}
       <section
         id="architecture"
-        className="py-20 bg-gradient-to-b from-transparent to-gray-900/30"
+        className="py-20 bg-linear-to-b from-transparent to-gray-900/30"
       >
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -379,7 +378,7 @@ export default function ZigBeeAlarmPage() {
                     <div className="p-4 bg-green-900/30 rounded-2xl border border-green-800 mb-4">
                       <IconBolt className="h-12 w-12 text-green-400 mx-auto" />
                     </div>
-                    <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 to-green-500 rounded-2xl blur-lg opacity-20 -z-10"></div>
+                    <div className="absolute -inset-2 bg-linear-to-r from-blue-500 to-green-500 rounded-2xl blur-lg opacity-20 -z-10"></div>
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">
                     Raspberry Pi 5
@@ -410,8 +409,8 @@ export default function ZigBeeAlarmPage() {
               {/* Connection Lines */}
               <div className="hidden md:block mt-12">
                 <div className="flex items-center justify-between px-8">
-                  <div className="h-0.5 flex-1 bg-gradient-to-r from-transparent via-blue-500 to-green-500"></div>
-                  <div className="h-0.5 flex-1 bg-gradient-to-r from-green-500 via-green-500 to-purple-500"></div>
+                  <div className="h-0.5 flex-1 bg-linear-to-r from-transparent via-blue-500 to-green-500"></div>
+                  <div className="h-0.5 flex-1 bg-linear-to-r from-green-500 via-green-500 to-purple-500"></div>
                 </div>
               </div>
 
@@ -433,10 +432,10 @@ export default function ZigBeeAlarmPage() {
                       {/* Card */}
                       <div className="relative bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-6 h-full overflow-hidden">
                         {/* Animated background gradient */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 via-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div className="absolute inset-0 bg-linear-to-br from-green-500/5 via-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                         {/* Step number */}
-                        <div className="inline-block px-4 py-2 mb-4 bg-gradient-to-r from-green-500/20 to-blue-500/20 rounded-full border border-green-500/30">
+                        <div className="inline-block px-4 py-2 mb-4 bg-gra≤`≥dient-to-r from-green-500/20 to-blue-500/20 rounded-full border border-green-500/30">
                           <span className="font-bold text-white">
                             Step {step.id}
                           </span>
@@ -449,7 +448,7 @@ export default function ZigBeeAlarmPage() {
                         <p className="text-gray-300">{step.content}</p>
 
                         {/* Bottom gradient line */}
-                        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-green-500 via-blue-500 to-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                        <div className="absolute bottom-0 left-0 right-0 h-1 bg-linear-to-r from-green-500 via-blue-500 to-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
                       </div>
                     </motion.div>
                   ))}
@@ -478,11 +477,11 @@ export default function ZigBeeAlarmPage() {
                 transition={{ delay: index * 0.1 }}
                 className="relative group"
               >
-                <div className="absolute -inset-0.5 bg-gradient-to-r rounded-2xl blur opacity-30 group-hover:opacity-70 transition duration-1000 group-hover:duration-200"></div>
+                <div className="absolute -inset-0.5 bg-linear-to-r rounded-2xl blur opacity-30 group-hover:opacity-70 transition duration-1000 group-hover:duration-200"></div>
                 <div className="relative bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-6 h-full">
                   <div className="flex items-start gap-4">
                     <div
-                      className={`p-3 rounded-xl bg-gradient-to-br ${feature.color}`}
+                      className={`p-3 rounded-xl bg-linear-to-br ${feature.color}`}
                     >
                       {feature.icon}
                     </div>
@@ -503,7 +502,7 @@ export default function ZigBeeAlarmPage() {
       {/* Team Section */}
       <section
         id="team"
-        className="py-20 bg-gradient-to-b from-transparent to-gray-900/30"
+        className="py-20 bg-linear-to-b from-transparent to-gray-900/30"
       >
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -535,7 +534,7 @@ export default function ZigBeeAlarmPage() {
       <section id="demo" className="py-20 relative">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-2xl p-8 md:p-12 overflow-hidden">
+            <div className="relative bg-linear-to-br from-gray-900 to-black border border-gray-800 rounded-2xl p-8 md:p-12 overflow-hidden">
               <div className="relative z-10">
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">
                   Live System Demonstration
@@ -564,7 +563,7 @@ export default function ZigBeeAlarmPage() {
                       </li>
                     </ul>
                     <Link href="/projects">
-                      <button className="w-full py-3 px-6 bg-gradient-to-r from-green-600 to-blue-600 rounded-xl text-white font-medium hover:opacity-90 transition-opacity">
+                      <button className="w-full py-3 px-6 bg-linear-to-r from-green-600 to-blue-600 rounded-xl text-white font-medium hover:opacity-90 transition-opacity">
                         View Other Projects
                       </button>
                     </Link>

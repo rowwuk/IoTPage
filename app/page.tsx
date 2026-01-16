@@ -1,4 +1,3 @@
-// app/page.tsx
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { FlipWords } from "@/components/ui/flip-words";
@@ -6,9 +5,9 @@ import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import {
   IconArrowRight,
-  IconDeviceDesktop,
-  IconMicroscope,
-  IconDatabase,
+  IconShieldCode,
+  IconRoute,
+  IconSeedling,
 } from "@tabler/icons-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
@@ -17,31 +16,28 @@ import { GridPattern } from "@/components/ui/shadcn-io/grid-pattern";
 export default function Home() {
   const projects = [
     {
-      id: 1,
-      name: "Smart Home Automation",
+      id: "zigbee-alarm",
+      name: "ZigBee Alarm System",
       description:
-        "Voice-controlled home ecosystem using ESP32 and custom firmware",
-      image: "/project1.jpg",
-      tags: ["ESP32", "IoT", "Automation"],
-      icon: <IconDeviceDesktop className="h-6 w-6" />,
+        "Advanced IoT-based home security with Face ID and a Telegram Bot",
+      tags: ["ZigBee2MQTT", "Face ID", "Raspberry Pi 5", "Flask"],
+      icon: <IconShieldCode className="h-6 w-6" />,
     },
     {
-      id: 2,
-      name: "Precision Agriculture System",
+      id: "warehouse-robot",
+      name: "Autonomous Warehouse Robot",
       description:
-        "Real-time soil monitoring with automated irrigation control",
-      image: "/project2.jpg",
-      tags: ["Sensors", "LoRa", "ML"],
-      icon: <IconMicroscope className="h-6 w-6" />,
+        "Intelligent robotic system for autonomous navigation with LiDAR and UE5",
+      tags: ["ESP32-S3", "LiDAR", "Unreal Engine", "Autonomous"],
+      icon: <IconRoute className="h-6 w-6" />,
     },
     {
-      id: 3,
+      id: "sensor-array",
       name: "Environmental Data Collection",
       description:
         "Real-time IoT system for environmental monitoring with ESP8266 and InfluxDB",
-      image: "/sensor-data.jpg",
       tags: ["ESP8266", "InfluxDB", "Python", "Real-time"],
-      icon: <IconDatabase className="h-6 w-6" />,
+      icon: <IconSeedling className="h-6 w-6" />,
     },
   ];
 
@@ -51,33 +47,6 @@ export default function Home() {
     { name: "Team", link: "#team" },
     { name: "Research", link: "#research" },
     { name: "Contact", link: "#contact" },
-  ];
-
-  const teamMembers = [
-    {
-      id: 1,
-      name: "Alex Chen",
-      designation: "IoT Lead",
-      image: "/team1.jpg",
-    },
-    {
-      id: 2,
-      name: "Maria Rodriguez",
-      designation: "Embedded Systems",
-      image: "/team2.jpg",
-    },
-    {
-      id: 3,
-      name: "James Kim",
-      designation: "Cloud Architecture",
-      image: "/team3.jpg",
-    },
-    {
-      id: 4,
-      name: "Sarah Johnson",
-      designation: "Data Analytics",
-      image: "/team4.jpg",
-    },
   ];
 
   const words = [
@@ -101,8 +70,8 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           {/* Stock image - replace with your own or keep this placeholder */}
           <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/18136105/pexels-photo-18136105.jpeg')] bg-cover bg-center" />
-          <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-purple-900/30" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-br from-black/80 via-black/60 to-purple-900/30" />
+          <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent" />
         </div>
 
         {/* Animated Gradient Orbs */}
@@ -115,11 +84,11 @@ export default function Home() {
           {/* Main Title */}
           <div className="mb-8">
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                 IoT Innovation Lab
               </span>
             </h1>
-            <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full mb-8" />
+            <div className="h-1 w-24 bg-linear-to-r from-blue-500 to-purple-500 mx-auto rounded-full mb-8" />
 
             <TypewriterEffectSmooth
               words={words}
@@ -146,7 +115,7 @@ export default function Home() {
               </HoverBorderGradient>
             </Link>
             <Link href="#research">
-              <button className="px-10 py-4 rounded-full w-full bg-gradient-to-b from-blue-600 to-purple-600 text-white font-medium text-lg hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-300 group">
+              <button className="px-10 py-4 rounded-full w-full bg-linear-to-b from-blue-600 to-purple-600 text-white font-medium text-lg hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-300 group">
                 <span className="flex items-center gap-2 justify-center">
                   Our Research
                   <IconArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -216,30 +185,18 @@ export default function Home() {
         className="py-20 bg-linear-to-b from-transparent to-gray-900/30"
       >
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Our <span className="text-purple-400">Team</span>
-            </h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              Passionate students driving innovation in IoT technology
-            </p>
-          </div>
 
-          <div className="flex justify-center mb-12">
-            <AnimatedTooltip items={teamMembers} />
-          </div>
-
-          <div className="relative flex h-[500px] flex-col items-center justify-center overflow-hidden rounded-lg">
+          <div className="relative flex h-125 flex-col items-center justify-center overflow-hidden rounded-lg">
             <GridPattern
               className={cn(
-                "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
+                "mask-[radial-gradient(300px_circle_at_center,white,transparent)]"
               )}
             />
-            <p className="text-lg font-bold md:text-xl text-gray-300 text-center leading-relaxed w-[50%]">
+            <p className="text-lg font-bold md:text-xl text-gray-300 text-center leading-relaxed max-sm:w-full sm:w-[50%]">
               Our multidisciplinary team combines expertise in{" "}
               <span className="text-blue-400">embedded systems</span>,{" "}
               <span className="text-purple-400">wireless communication</span>,
-              and <span className="text-green-400">cloud computing</span> to
+              and <span className="text-green-400">visualization</span> to
               create groundbreaking IoT solutions that address real-world
               challenges.
             </p>
@@ -259,12 +216,12 @@ export default function Home() {
               groundbreaking project
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <Link href="#team">
                 <button className="px-8 py-3 bg-linear-to-r from-purple-600 to-pink-600 rounded-full text-white font-medium hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300">
                   Get in Touch
                 </button>
               </Link>
-              <Link href="/projects">
+              <Link href="#projects">
                 <button className="px-8 py-3 border border-gray-700 rounded-full text-white font-medium hover:bg-gray-800/50 transition-all duration-300">
                   View All Projects
                 </button>

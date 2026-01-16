@@ -1,4 +1,3 @@
-// app/projects/sensor-array/page.tsx
 "use client";
 
 import { BackgroundBeams } from "@/components/ui/background-beams";
@@ -95,25 +94,25 @@ export default function SensorArrayPage() {
       id: 1,
       name: "Michał Kowalczyk",
       designation: "Project Lead",
-      image: "/team/sensor1.jpg",
+      image: "../user.jpg",
     },
     {
       id: 2,
       name: "Krystian Kowalski",
       designation: "Hardware Engineer",
-      image: "/team/sensor2.jpg",
+      image: "../user.jpg",
     },
     {
       id: 3,
       name: "Filip Jorka",
       designation: "Backend Developer",
-      image: "/team/sensor3.jpg",
+      image: "../user.jpg",
     },
     {
       id: 4,
       name: "Kamil Grzybek",
       designation: "Frontend Developer",
-      image: "/team/sensor4.jpg",
+      image: "../user.jpg",
     },
   ];
 
@@ -202,8 +201,8 @@ export default function SensorArrayPage() {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/6798183/pexels-photo-6798183.jpeg')] bg-cover bg-center" />
-          <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-purple-900/30" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-br from-black/80 via-black/60 to-purple-900/30" />
+          <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent" />
         </div>
 
         {/* Gradient Orbs */}
@@ -222,18 +221,18 @@ export default function SensorArrayPage() {
             {/* Badge */}
             <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6">
               <span className="text-sm font-medium text-white">
-                University IoT Project
+                IoT Sensor Visualization Project
               </span>
             </div>
 
             {/* Main Title */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-cyan-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
                 Environmental Data Collection System
               </span>
             </h1>
 
-            <div className="h-1 w-32 bg-gradient-to-r from-cyan-500 to-purple-500 mx-auto rounded-full mb-8" />
+            <div className="h-1 w-32 bg-linear-to-r from-cyan-500 to-purple-500 mx-auto rounded-full mb-8" />
 
             {/* Subtitle */}
             <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed">
@@ -264,7 +263,7 @@ export default function SensorArrayPage() {
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="#architecture">
                 <HoverBorderGradient
-                  containerClassName="rounded-full"
+                  containerClassName="rounded-full w-full"
                   as="button"
                   className="bg-black text-white flex items-center space-x-2 px-8 py-4 text-lg"
                 >
@@ -273,7 +272,7 @@ export default function SensorArrayPage() {
                 </HoverBorderGradient>
               </Link>
               <Link href="#analysis">
-                <button className="px-10 py-4 rounded-full bg-gradient-to-b from-cyan-600 to-purple-600 text-white font-medium text-lg hover:shadow-2xl hover:shadow-cyan-500/30 transition-all duration-300">
+                <button className="px-10 py-4 rounded-full w-full bg-linear-to-b from-cyan-600 to-purple-600 text-white font-medium text-lg hover:shadow-2xl hover:shadow-cyan-500/30 transition-all duration-300">
                   Data Analysis
                 </button>
               </Link>
@@ -373,7 +372,7 @@ export default function SensorArrayPage() {
                       className="group"
                     >
                       <div
-                        className={`bg-gradient-to-br ${tech.color} p-0.5 rounded-xl`}
+                        className={`bg-linear-to-br ${tech.color} p-0.5 rounded-xl`}
                       >
                         <div className="bg-gray-900 rounded-xl p-5 h-full">
                           <div className="flex items-center gap-4 mb-3">
@@ -401,7 +400,7 @@ export default function SensorArrayPage() {
       {/* Architecture Section */}
       <section
         id="architecture"
-        className="py-20 bg-gradient-to-b from-transparent to-gray-900/30"
+        className="py-20 bg-linear-to-b from-transparent to-gray-900/30"
       >
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -428,7 +427,7 @@ export default function SensorArrayPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   className="text-center"
                 >
-                  <div className="p-6 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl border border-cyan-800 mb-4">
+                  <div className="p-6 bg-linear-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl border border-cyan-800 mb-4">
                     <IconCpu className="h-16 w-16 text-cyan-400 mx-auto" />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">
@@ -450,10 +449,10 @@ export default function SensorArrayPage() {
                   className="text-center"
                 >
                   <div className="relative">
-                    <div className="p-6 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl border border-purple-800 mb-4">
+                    <div className="p-6 bg-linear-to-br from-purple-500/20 to-pink-500/20 rounded-2xl border border-purple-800 mb-4">
                       <IconWifi className="h-16 w-16 text-purple-400 mx-auto" />
                     </div>
-                    <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-2xl blur-lg opacity-20 -z-10"></div>
+                    <div className="absolute -inset-2 bg-linear-to-r from-cyan-500 to-purple-500 rounded-2xl blur-lg opacity-20 -z-10"></div>
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">
                     Wi-Fi LAN
@@ -473,7 +472,7 @@ export default function SensorArrayPage() {
                   transition={{ delay: 0.4 }}
                   className="text-center"
                 >
-                  <div className="p-6 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl border border-blue-800 mb-4">
+                  <div className="p-6 bg-linear-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl border border-blue-800 mb-4">
                     <IconServer className="h-16 w-16 text-blue-400 mx-auto" />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">
@@ -491,8 +490,8 @@ export default function SensorArrayPage() {
               {/* Connection Flow */}
               <div className="hidden md:block mt-12">
                 <div className="flex items-center justify-between px-8">
-                  <div className="h-0.5 flex-1 bg-gradient-to-r from-cyan-500 via-cyan-500 to-purple-500"></div>
-                  <div className="h-0.5 flex-1 bg-gradient-to-r from-purple-500 via-purple-500 to-blue-500"></div>
+                  <div className="h-0.5 flex-1 bg-linear-to-r from-cyan-500 via-cyan-500 to-purple-500"></div>
+                  <div className="h-0.5 flex-1 bg-linear-to-r from-purple-500 via-purple-500 to-blue-500"></div>
                 </div>
               </div>
             </div>
@@ -510,7 +509,7 @@ export default function SensorArrayPage() {
                     className="group"
                   >
                     <div
-                      className={`bg-gradient-to-br ${sensor.color} p-0.5 rounded-xl h-full`}
+                      className={`bg-linear-to-br ${sensor.color} p-0.5 rounded-xl h-full`}
                     >
                       <div className="bg-gray-900 rounded-xl p-6 h-full">
                         <div className="flex items-center gap-4 mb-4">
@@ -564,10 +563,10 @@ export default function SensorArrayPage() {
                     {/* Card */}
                     <div className="relative bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-6 h-full overflow-hidden">
                       {/* Animated background gradient */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      <div className="absolute inset-0 bg-linear-to-br from-cyan-500/5 via-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                       {/* Step number */}
-                      <div className="inline-block px-4 py-2 mb-4 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-full border border-cyan-500/30">
+                      <div className="inline-block px-4 py-2 mb-4 bg-linear-to-r from-cyan-500/20 to-purple-500/20 rounded-full border border-cyan-500/30">
                         <span className="font-bold text-white">
                           Step {feature.id}
                         </span>
@@ -580,7 +579,7 @@ export default function SensorArrayPage() {
                       <p className="text-gray-300">{feature.content}</p>
 
                       {/* Bottom gradient line */}
-                      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500 via-purple-500 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                      <div className="absolute bottom-0 left-0 right-0 h-1 bg-linear-to-r from-cyan-500 via-purple-500 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
                     </div>
                   </motion.div>
                 ))}
@@ -613,10 +612,10 @@ export default function SensorArrayPage() {
                   transition={{ delay: index * 0.2 }}
                   className="relative group"
                 >
-                  <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 to-green-500 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+                  <div className="absolute -inset-0.5 bg-linear-to-r from-cyan-500 to-green-500 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
                   <div className="relative bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-6 h-full">
                     <div className="flex items-start gap-4 mb-6">
-                      <div className="p-3 rounded-xl bg-gradient-to-br from-cyan-500/20 to-green-500/20">
+                      <div className="p-3 rounded-xl bg-linear-to-br from-cyan-500/20 to-green-500/20">
                         {analysis.icon}
                       </div>
                       <div>
@@ -683,8 +682,8 @@ export default function SensorArrayPage() {
                   </div>
 
                   <div className="relative">
-                    <div className="bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-xl p-6">
-                      <div className="aspect-video bg-gradient-to-br from-purple-900/20 to-blue-900/20 rounded-lg flex items-center justify-center mb-4">
+                    <div className="bg-linear-to-br from-gray-900 to-black border border-gray-800 rounded-xl p-6">
+                      <div className="aspect-video bg-linear-to-br from-purple-900/20 to-blue-900/20 rounded-lg flex items-center justify-center mb-4">
                         <div className="text-center">
                           <IconDatabase className="h-16 w-16 text-purple-400 mx-auto mb-4" />
                           <p className="text-gray-400">Real-time Data Stream</p>
@@ -732,7 +731,7 @@ export default function SensorArrayPage() {
       </section>
 
       {/* Future Development */}
-      <section className="py-20 bg-gradient-to-b from-transparent to-gray-900/30">
+      <section className="py-20 bg-linear-to-b from-transparent to-gray-900/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
@@ -766,7 +765,7 @@ export default function SensorArrayPage() {
                   </ul>
                 </div>
                 <div className="flex items-center justify-center">
-                  <div className="text-center p-6 bg-gradient-to-br from-yellow-500/10 to-orange-500/10 rounded-2xl border border-yellow-800">
+                  <div className="text-center p-6 bg-linear-to-br from-yellow-500/10 to-orange-500/10 rounded-2xl border border-yellow-800">
                     <IconAlertCircle className="h-16 w-16 text-yellow-400 mx-auto mb-4" />
                     <h4 className="text-xl font-bold text-white mb-2">
                       System Expansion

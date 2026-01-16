@@ -1,4 +1,3 @@
-// app/projects/warehouse-robot/page.tsx
 "use client";
 
 import { BackgroundBeams } from "@/components/ui/background-beams";
@@ -63,27 +62,15 @@ export default function WarehouseRobotPage() {
   const teamMembers = [
     {
       id: 1,
-      name: "Lead Robotics Engineer",
-      designation: "Hardware & Navigation",
-      image: "/team/robot1.jpg",
+      name: "Gregorz Lademann",
+      designation: "Hardware Engineer",
+      image: "../user.jpg",
     },
     {
       id: 2,
-      name: "Software Architect",
-      designation: "Python & C++ Development",
-      image: "/team/robot2.jpg",
-    },
-    {
-      id: 3,
-      name: "3D Simulation Expert",
-      designation: "Unreal Engine & Blender",
-      image: "/team/robot3.jpg",
-    },
-    {
-      id: 4,
-      name: "Systems Integration",
-      designation: "Network & Communication",
-      image: "/team/robot4.jpg",
+      name: "Jakub Lidzbarski",
+      designation: "Visualization Engineer",
+      image: "../user.jpg",
     },
   ];
 
@@ -183,8 +170,8 @@ export default function WarehouseRobotPage() {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/32778343/pexels-photo-32778343/free-photo-of-autonomous-delivery-robot-at-tech-conference.jpeg')] bg-cover bg-center" />
-          <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-blue-900/30" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-br from-black/80 via-black/60 to-blue-900/30" />
+          <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent" />
         </div>
 
         {/* Gradient Orbs */}
@@ -203,18 +190,18 @@ export default function WarehouseRobotPage() {
             {/* Badge */}
             <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6">
               <span className="text-sm font-medium text-white">
-                University Robotics Project
+                IoT Robotics Visualization Project
               </span>
             </div>
 
             {/* Main Title */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
                 Autonomous Warehouse Robot
               </span>
             </h1>
 
-            <div className="h-1 w-32 bg-gradient-to-r from-cyan-500 to-blue-500 mx-auto rounded-full mb-8" />
+            <div className="h-1 w-32 bg-linear-to-r from-cyan-500 to-blue-500 mx-auto rounded-full mb-8" />
 
             {/* Subtitle */}
             <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed">
@@ -245,7 +232,7 @@ export default function WarehouseRobotPage() {
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="#simulation">
                 <HoverBorderGradient
-                  containerClassName="rounded-full"
+                  containerClassName="rounded-full w-full"
                   as="button"
                   className="bg-black text-white flex items-center space-x-2 px-8 py-4 text-lg"
                 >
@@ -254,7 +241,7 @@ export default function WarehouseRobotPage() {
                 </HoverBorderGradient>
               </Link>
               <Link href="#architecture">
-                <button className="px-10 py-4 rounded-full bg-gradient-to-b from-cyan-600 to-blue-600 text-white font-medium text-lg hover:shadow-2xl hover:shadow-cyan-500/30 transition-all duration-300">
+                <button className="px-10 py-4 rounded-full w-full bg-linear-to-b from-cyan-600 to-blue-600 text-white font-medium text-lg hover:shadow-2xl hover:shadow-cyan-500/30 transition-all duration-300">
                   System Architecture
                 </button>
               </Link>
@@ -358,7 +345,7 @@ export default function WarehouseRobotPage() {
       {/* Architecture Section */}
       <section
         id="architecture"
-        className="py-20 bg-gradient-to-b from-transparent to-gray-900/30"
+        className="py-20 bg-linear-to-b from-transparent to-gray-900/30"
       >
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -377,7 +364,7 @@ export default function WarehouseRobotPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   className="relative group"
                 >
-                  <div className="absolute -inset-0.5 bg-gradient-to-b from-green-500 to-emerald-500 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
+                  <div className="absolute -inset-0.5 bg-linear-to-b from-green-500 to-emerald-500 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
                   <div className="relative bg-gray-900 rounded-2xl p-6 border border-green-800">
                     <div className="text-center mb-4">
                       <IconRobot className="h-12 w-12 text-green-400 mx-auto mb-3" />
@@ -414,7 +401,7 @@ export default function WarehouseRobotPage() {
                   transition={{ delay: 0.2 }}
                   className="relative group"
                 >
-                  <div className="absolute -inset-0.5 bg-gradient-to-b from-blue-500 to-cyan-500 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
+                  <div className="absolute -inset-0.5 bg-linear-to-b from-blue-500 to-cyan-500 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
                   <div className="relative bg-gray-900 rounded-2xl p-6 border border-blue-800">
                     <div className="text-center mb-4">
                       <IconCpu className="h-12 w-12 text-blue-400 mx-auto mb-3" />
@@ -453,7 +440,7 @@ export default function WarehouseRobotPage() {
                   transition={{ delay: 0.4 }}
                   className="relative group"
                 >
-                  <div className="absolute -inset-0.5 bg-gradient-to-b from-purple-500 to-pink-500 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
+                  <div className="absolute -inset-0.5 bg-linear-to-b from-purple-500 to-pink-500 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
                   <div className="relative bg-gray-900 rounded-2xl p-6 border border-purple-800">
                     <div className="text-center mb-4">
                       <Icon3dCubeSphere className="h-12 w-12 text-purple-400 mx-auto mb-3" />
@@ -488,7 +475,7 @@ export default function WarehouseRobotPage() {
 
               {/* Connection Flow */}
               <div className="relative h-2 mx-8 mb-12">
-                <div className="absolute inset-0 bg-gradient-to-r from-green-500 via-blue-500 to-purple-500 rounded-full"></div>
+                <div className="absolute inset-0 bg-linear-to-r from-green-500 via-blue-500 to-purple-500 rounded-full"></div>
                 <div className="absolute -top-2 left-0 h-6 w-6 rounded-full bg-green-500"></div>
                 <div className="absolute -top-2 left-1/2 -translate-x-1/2 h-6 w-6 rounded-full bg-blue-500"></div>
                 <div className="absolute -top-2 right-0 h-6 w-6 rounded-full bg-purple-500"></div>
@@ -512,10 +499,10 @@ export default function WarehouseRobotPage() {
                       {/* Card */}
                       <div className="relative bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-6 h-full overflow-hidden">
                         {/* Animated background gradient */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div className="absolute inset-0 bg-linear-to-br from-cyan-500/5 via-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                         {/* Step number */}
-                        <div className="inline-block px-4 py-2 mb-4 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full border border-cyan-500/30">
+                        <div className="inline-block px-4 py-2 mb-4 bg-linear-to-r from-cyan-500/20 to-blue-500/20 rounded-full border border-cyan-500/30">
                           <span className="font-bold text-white">
                             Step {step.id}
                           </span>
@@ -528,7 +515,7 @@ export default function WarehouseRobotPage() {
                         <p className="text-gray-300">{step.content}</p>
 
                         {/* Bottom gradient line */}
-                        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                        <div className="absolute bottom-0 left-0 right-0 h-1 bg-linear-to-r from-cyan-500 via-blue-500 to-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
                       </div>
                     </motion.div>
                   ))}
@@ -562,7 +549,7 @@ export default function WarehouseRobotPage() {
                 className="group"
               >
                 <div
-                  className={`bg-gradient-to-br ${tech.color} p-0.5 rounded-xl`}
+                  className={`bg-linear-to-br ${tech.color} p-0.5 rounded-xl`}
                 >
                   <div className="bg-gray-900 rounded-xl p-5 h-full">
                     <h3 className="font-bold text-white text-lg mb-2">
@@ -614,7 +601,7 @@ export default function WarehouseRobotPage() {
       {/* Simulation Section */}
       <section
         id="simulation"
-        className="py-20 bg-gradient-to-b from-transparent to-gray-900/30"
+        className="py-20 bg-linear-to-b from-transparent to-gray-900/30"
       >
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -685,8 +672,8 @@ export default function WarehouseRobotPage() {
               </div>
 
               <div className="relative">
-                <div className="relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-2xl p-8 overflow-hidden">
-                  <div className="aspect-video bg-gradient-to-br from-cyan-900/20 to-blue-900/20 rounded-xl flex items-center justify-center mb-6">
+                <div className="relative bg-linear-to-br from-gray-900 to-black border border-gray-800 rounded-2xl p-8 overflow-hidden">
+                  <div className="aspect-video bg-l`inear-to-br from-cyan-900/20 to-blue-900/20 rounded-xl flex items-center justify-center mb-6">
                     <div className="text-center">
                       <Icon3dCubeSphere className="h-20 w-20 text-cyan-400 mx-auto mb-4" />
                       <p className="text-gray-400">

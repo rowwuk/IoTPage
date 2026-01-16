@@ -1,4 +1,3 @@
-// components/navbar.tsx
 "use client";
 
 import { useState, useEffect } from "react";
@@ -7,12 +6,12 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   IconHome,
-  IconDeviceDesktop,
-  IconRobot,
-  IconTemperature,
   IconMenu2,
   IconX,
   IconArrowLeft,
+  IconShieldCode,
+  IconRoute,
+  IconSeedling,
 } from "@tabler/icons-react";
 
 const mainNavItems = [
@@ -20,17 +19,17 @@ const mainNavItems = [
   {
     name: "ZigBee Alarm",
     href: "/projects/zigbee-alarm",
-    icon: <IconDeviceDesktop className="h-5 w-5" />,
+    icon: <IconShieldCode className="h-5 w-5" />,
   },
   {
     name: "Warehouse Robot",
     href: "/projects/warehouse-robot",
-    icon: <IconRobot className="h-5 w-5" />,
+    icon: <IconRoute className="h-5 w-5" />,
   },
   {
     name: "Sensor Array",
     href: "/projects/sensor-array",
-    icon: <IconTemperature className="h-5 w-5" />,
+    icon: <IconSeedling className="h-5 w-5" />,
   },
 ];
 
