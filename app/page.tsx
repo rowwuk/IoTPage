@@ -1,8 +1,4 @@
 // app/page.tsx
-import { HeroHighlight } from "@/components/ui/hero-highlight";
-import { CardStack } from "@/components/ui/card-stack";
-import { FloatingNav } from "@/components/ui/floating-navbar";
-import { LampContainer } from "@/components/ui/lamp";
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { FlipWords } from "@/components/ui/flip-words";
@@ -11,14 +7,12 @@ import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import {
   IconArrowRight,
   IconDeviceDesktop,
-  IconDeviceMobile,
   IconMicroscope,
-  IconWifi,
+  IconDatabase,
 } from "@tabler/icons-react";
 import Link from "next/link";
-import Image from "next/image";
-import { DotPattern } from "@/components/ui/dot-pattern";
 import { cn } from "@/lib/utils";
+import { GridPattern } from "@/components/ui/shadcn-io/grid-pattern";
 
 export default function Home() {
   const projects = [
@@ -42,11 +36,12 @@ export default function Home() {
     },
     {
       id: 3,
-      name: "Wearable Health Monitor",
-      description: "Continuous vital signs monitoring with emergency alerts",
-      image: "/project3.jpg",
-      tags: ["BLE", "Wearable", "Healthcare"],
-      icon: <IconWifi className="h-6 w-6" />,
+      name: "Environmental Data Collection",
+      description:
+        "Real-time IoT system for environmental monitoring with ESP8266 and InfluxDB",
+      image: "/sensor-data.jpg",
+      tags: ["ESP8266", "InfluxDB", "Python", "Real-time"],
+      icon: <IconDatabase className="h-6 w-6" />,
     },
   ];
 
@@ -100,53 +95,62 @@ export default function Home() {
       {/* Background Elements */}
       <BackgroundBeams className="absolute inset-0 z-0" />
 
-      {/* Floating Navigation */}
-      <FloatingNav navItems={navItems} className="z-50" />
-
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-          <div className="absolute top-40 right-10 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-          <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+          {/* Stock image - replace with your own or keep this placeholder */}
+          <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/18136105/pexels-photo-18136105.jpeg')] bg-cover bg-center" />
+          <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-purple-900/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
         </div>
 
-        <div className="container relative z-10 mx-auto px-4 py-20">
-          <LampContainer>
-            <h1 className="mt-8 bg-linear-to-br from-white to-gray-400 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl">
-              IoT Innovation Lab
-            </h1>
-          </LampContainer>
+        {/* Animated Gradient Orbs */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        </div>
 
-          <div className="mt-8 text-center text-gray-300">
+        <div className="container relative z-10 mx-auto px-4 py-20 text-center">
+          {/* Main Title */}
+          <div className="mb-8">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                IoT Innovation Lab
+              </span>
+            </h1>
+            <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full mb-8" />
+
             <TypewriterEffectSmooth
               words={words}
-              className="text-xl md:text-2xl items-center justify-center"
+              className="text-2xl md:text-3xl lg:text-4xl m-6 justify-center"
             />
-            <div className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
-              Creating{" "}
-              <b>
-                <FlipWords words={flipWords} />
-              </b>
+
+            <div className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed">
+              Creating <FlipWords words={flipWords} />
               devices that transform everyday life through cutting-edge
-              technology
+              technology and university research
             </div>
           </div>
 
+          {/* CTA Buttons */}
           <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="#projects">
               <HoverBorderGradient
-                containerClassName="rounded-full"
+                containerClassName="rounded-full w-full"
                 as="button"
-                className="bg-black text-white flex items-center space-x-2 px-6 py-3"
+                className="bg-black text-white flex items-center space-x-2 px-8 py-4 text-lg"
               >
                 <span>Explore Projects</span>
-                <IconArrowRight className="h-4 w-4" />
+                <IconArrowRight className="h-5 w-5" />
               </HoverBorderGradient>
             </Link>
             <Link href="#research">
-              <button className="px-8 py-3 rounded-full bg-linear-to-b from-blue-500 to-blue-600 text-white font-medium hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300">
-                Our Research
+              <button className="px-10 py-4 rounded-full w-full bg-gradient-to-b from-blue-600 to-purple-600 text-white font-medium text-lg hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-300 group">
+                <span className="flex items-center gap-2 justify-center">
+                  Our Research
+                  <IconArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </span>
               </button>
             </Link>
           </div>
@@ -181,21 +185,23 @@ export default function Home() {
                       </h3>
                     </div>
                     <p className="text-gray-300 mb-6">{project.description}</p>
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {project.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="px-3 py-1 bg-gray-800 rounded-full text-sm text-gray-300"
-                        >
-                          {tag}
-                        </span>
-                      ))}
+                    <div>
+                      <div className="flex flex-wrap gap-2 mb-6">
+                        {project.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="px-3 py-1 bg-gray-800 rounded-full text-sm text-gray-300"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      <Link href={`/projects/${project.id}`}>
+                        <button className="w-full py-2 px-4 bg-linear-to-r from-blue-600 to-purple-600 rounded-lg text-white font-medium hover:opacity-90 transition-opacity">
+                          View Details
+                        </button>
+                      </Link>
                     </div>
-                    <Link href={`/projects/${project.id}`}>
-                      <button className="w-full py-2 px-4 bg-linear-to-r from-blue-600 to-purple-600 rounded-lg text-white font-medium hover:opacity-90 transition-opacity">
-                        View Details
-                      </button>
-                    </Link>
                   </div>
                 </div>
               </div>
@@ -224,7 +230,7 @@ export default function Home() {
           </div>
 
           <div className="relative flex h-[500px] flex-col items-center justify-center overflow-hidden rounded-lg">
-            <DotPattern
+            <GridPattern
               className={cn(
                 "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
               )}

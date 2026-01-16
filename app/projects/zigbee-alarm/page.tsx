@@ -1,11 +1,8 @@
 // app/projects/zigbee-alarm/page.tsx
 "use client";
 
-import { LampContainer } from "@/components/ui/lamp";
 import { BackgroundBeams } from "@/components/ui/background-beams";
-import { CardStack } from "@/components/ui/card-stack";
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
-import { FloatingNav } from "@/components/ui/floating-navbar";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import {
   IconArrowLeft,
@@ -176,48 +173,88 @@ export default function ZigBeeAlarmPage() {
     <main className="relative min-h-screen bg-black overflow-hidden">
       <BackgroundBeams />
 
-      {/* Floating Navigation */}
-      <FloatingNav navItems={navItems} className="z-50" />
-
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      <section className="relative min-h-[70vh] md:min-h-[80vh] flex items-center justify-center overflow-hidden">
+        {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-green-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-          <div className="absolute top-40 right-10 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-          <div className="absolute -bottom-8 left-20 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+          <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/7522609/pexels-photo-7522609.jpeg')] bg-cover bg-center" />
+          <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-green-900/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
         </div>
 
-        <div className="container relative z-10 mx-auto px-4 py-20">
-          <LampContainer>
-            <h1 className="mt-8 bg-gradient-to-br from-green-400 to-blue-400 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl">
-              ZigBee Alarm System
+        {/* Gradient Orbs */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-green-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        </div>
+
+        <div className="container relative z-10 mx-auto px-4 py-20 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl mx-auto"
+          >
+            {/* Badge */}
+            <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6">
+              <span className="text-sm font-medium text-white">
+                University IoT Security Project
+              </span>
+            </div>
+
+            {/* Main Title */}
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-green-400 via-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+                ZigBee Alarm System
+              </span>
             </h1>
-          </LampContainer>
 
-          <div className="mt-8 text-center">
-            <p className="mt-4 text-xl text-gray-300 max-w-3xl mx-auto">
-              Advanced IoT-based monitoring and control system with multi-factor
-              authentication and remote management
+            <div className="h-1 w-32 bg-gradient-to-r from-green-500 to-emerald-500 mx-auto rounded-full mb-8" />
+
+            {/* Subtitle */}
+            <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed">
+              Advanced IoT-based home security with multi-factor authentication,
+              remote management, and real-time monitoring
             </p>
-          </div>
 
-          <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="#demo">
-              <HoverBorderGradient
-                containerClassName="rounded-full"
-                as="button"
-                className="bg-black text-white flex items-center space-x-2 px-6 py-3"
-              >
-                <span>View Live Demo</span>
-                <IconArrowRight className="h-4 w-4" />
-              </HoverBorderGradient>
-            </Link>
-            <Link href="#architecture">
-              <button className="px-8 py-3 rounded-full bg-gradient-to-b from-green-500 to-green-600 text-white font-medium hover:shadow-lg hover:shadow-green-500/30 transition-all duration-300">
-                System Architecture
-              </button>
-            </Link>
-          </div>
+            {/* Project Tags */}
+            <div className="flex flex-wrap justify-center gap-3 mb-12">
+              {[
+                "ZigBee",
+                "IoT Security",
+                "Multi-factor Auth",
+                "Telegram Bot",
+                "Face ID",
+                "Raspberry Pi",
+              ].map((tag) => (
+                <span
+                  key={tag}
+                  className="px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 text-gray-300"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="#demo">
+                <HoverBorderGradient
+                  containerClassName="rounded-full"
+                  as="button"
+                  className="bg-black text-white flex items-center space-x-2 px-8 py-4 text-lg"
+                >
+                  <span>View Live Demo</span>
+                  <IconArrowRight className="h-5 w-5" />
+                </HoverBorderGradient>
+              </Link>
+              <Link href="#architecture">
+                <button className="px-10 py-4 rounded-full bg-gradient-to-b from-green-600 to-emerald-600 text-white font-medium text-lg hover:shadow-2xl hover:shadow-green-500/30 transition-all duration-300">
+                  System Architecture
+                </button>
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -378,12 +415,45 @@ export default function ZigBeeAlarmPage() {
                 </div>
               </div>
 
-              {/* System Flow */}
-              <div className="mt-16">
+              {/* Workflow */}
+              <div className="pt-4">
                 <h3 className="text-2xl font-bold text-white mb-8 text-center">
                   System Workflow
                 </h3>
-                <CardStack items={systemFlow} />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {systemFlow.map((step, index) => (
+                    <motion.div
+                      key={step.id}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.15 }}
+                      whileHover={{ scale: 1.02 }}
+                      className="relative group"
+                    >
+                      {/* Card */}
+                      <div className="relative bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-6 h-full overflow-hidden">
+                        {/* Animated background gradient */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 via-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                        {/* Step number */}
+                        <div className="inline-block px-4 py-2 mb-4 bg-gradient-to-r from-green-500/20 to-blue-500/20 rounded-full border border-green-500/30">
+                          <span className="font-bold text-white">
+                            Step {step.id}
+                          </span>
+                        </div>
+
+                        {/* Content */}
+                        <h4 className="text-xl font-bold text-white mb-3">
+                          {step.name}
+                        </h4>
+                        <p className="text-gray-300">{step.content}</p>
+
+                        {/* Bottom gradient line */}
+                        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-green-500 via-blue-500 to-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -409,7 +479,7 @@ export default function ZigBeeAlarmPage() {
                 className="relative group"
               >
                 <div className="absolute -inset-0.5 bg-gradient-to-r rounded-2xl blur opacity-30 group-hover:opacity-70 transition duration-1000 group-hover:duration-200"></div>
-                <div className="relative bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-6">
+                <div className="relative bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-6 h-full">
                   <div className="flex items-start gap-4">
                     <div
                       className={`p-3 rounded-xl bg-gradient-to-br ${feature.color}`}

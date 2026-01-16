@@ -1,28 +1,22 @@
 // app/projects/sensor-array/page.tsx
 "use client";
 
-import { LampContainer } from "@/components/ui/lamp";
 import { BackgroundBeams } from "@/components/ui/background-beams";
-import { CardStack } from "@/components/ui/card-stack";
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
-import { FloatingNav } from "@/components/ui/floating-navbar";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import {
-  IconArrowLeft,
   IconArrowRight,
   IconTemperature,
   IconDroplets,
-  IconWind,
-  IconSun,
   IconCloud,
-  IconCircuitBattery,
   IconDatabase,
   IconChartLine,
-  IconEye,
-  IconBroadcast,
   IconCpu,
   IconSeo,
-  IconWash,
+  IconWifi,
+  IconChartAreaLine,
+  IconServer,
+  IconAlertCircle,
 } from "@tabler/icons-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -39,220 +33,162 @@ export default function SensorArrayPage() {
   const sensorModules = [
     {
       id: 1,
-      name: "Flame Sensor",
-      description: "Fire detection and flame monitoring",
-      icon: <IconWash className="h-6 w-6 text-red-500" />,
-      color: "from-red-500 to-orange-500",
+      name: "BME680",
+      description: "Temperature, humidity, pressure & air quality",
+      icon: <IconCloud className="h-6 w-6 text-cyan-500" />,
+      color: "from-cyan-500 to-blue-500",
+      features: ["Temperature", "Humidity", "Pressure", "Air Quality"],
     },
     {
       id: 2,
-      name: "Color Sensor",
-      description: "RGB color detection and analysis",
-      icon: <IconEye className="h-6 w-6 text-purple-500" />,
-      color: "from-purple-500 to-pink-500",
+      name: "DHT11",
+      description: "Temperature and humidity sensor",
+      icon: <IconTemperature className="h-6 w-6 text-red-500" />,
+      color: "from-red-500 to-orange-500",
+      features: ["Temperature", "Humidity"],
     },
     {
       id: 3,
       name: "Soil Moisture",
       description: "Ground humidity level measurement",
-      icon: <IconDroplets className="h-6 w-6 text-blue-500" />,
-      color: "from-blue-500 to-cyan-500",
-    },
-    {
-      id: 4,
-      name: "Rotation Sensor",
-      description: "Angular position and speed detection",
-      icon: <IconWind className="h-6 w-6 text-green-500" />,
+      icon: <IconDroplets className="h-6 w-6 text-green-500" />,
       color: "from-green-500 to-emerald-500",
-    },
-    {
-      id: 5,
-      name: "Sound Sensor",
-      description: "Audio level and frequency monitoring",
-      icon: <IconBroadcast className="h-6 w-6 text-yellow-500" />,
-      color: "from-yellow-500 to-orange-500",
-    },
-    {
-      id: 6,
-      name: "Liquid Level",
-      description: "Fluid depth and volume measurement",
-      icon: <IconDroplets className="h-6 w-6 text-cyan-500" />,
-      color: "from-cyan-500 to-blue-500",
-    },
-    {
-      id: 7,
-      name: "Temperature",
-      description: "Ambient temperature monitoring",
-      icon: <IconTemperature className="h-6 w-6 text-red-500" />,
-      color: "from-red-500 to-pink-500",
-    },
-    {
-      id: 8,
-      name: "Light Sensor",
-      description: "Illumination level detection",
-      icon: <IconSun className="h-6 w-6 text-yellow-500" />,
-      color: "from-yellow-500 to-amber-500",
-    },
-    {
-      id: 9,
-      name: "Pressure Sensor",
-      description: "Atmospheric pressure measurement",
-      icon: <IconCloud className="h-6 w-6 text-gray-500" />,
-      color: "from-gray-500 to-blue-500",
+      features: ["Soil Humidity", "Plant Health"],
     },
   ];
 
-  const navItems = [
-    { name: "Home", link: "/", icon: <IconArrowLeft className="h-4 w-4" /> },
-    { name: "Overview", link: "#overview" },
-    { name: "Sensors", link: "#sensors" },
-    { name: "Architecture", link: "#architecture" },
-    { name: "Data Flow", link: "#dataflow" },
-    { name: "Applications", link: "#applications" },
+  const technologyStack = [
+    {
+      name: "ESP8266",
+      description: "Main measurement node with Wi-Fi",
+      icon: <IconCpu className="h-8 w-8" />,
+      color: "from-blue-500 to-cyan-500",
+    },
+    {
+      name: "Python + Flask",
+      description: "Application server backend",
+      icon: <IconServer className="h-8 w-8" />,
+      color: "from-yellow-500 to-orange-500",
+    },
+    {
+      name: "InfluxDB 3 Core",
+      description: "Time-series database",
+      icon: <IconDatabase className="h-8 w-8" />,
+      color: "from-purple-500 to-pink-500",
+    },
+    {
+      name: "UDP Broadcast",
+      description: "Wi-Fi communication protocol",
+      icon: <IconWifi className="h-8 w-8" />,
+      color: "from-green-500 to-emerald-500",
+    },
+    {
+      name: "HTML/CSS/JS",
+      description: "Frontend visualization",
+      icon: <IconChartAreaLine className="h-8 w-8" />,
+      color: "from-red-500 to-pink-500",
+    },
   ];
 
   const teamMembers = [
     {
       id: 1,
-      name: "Sensor Systems Lead",
-      designation: "Hardware Integration",
+      name: "Michał Kowalczyk",
+      designation: "Project Lead",
       image: "/team/sensor1.jpg",
     },
     {
       id: 2,
-      name: "Data Analytics",
-      designation: "ESP32 Programming",
+      name: "Krystian Kowalski",
+      designation: "Hardware Engineer",
       image: "/team/sensor2.jpg",
     },
     {
       id: 3,
-      name: "Environmental Analysis",
-      designation: "Weather Monitoring",
+      name: "Filip Jorka",
+      designation: "Backend Developer",
       image: "/team/sensor3.jpg",
     },
     {
       id: 4,
-      name: "System Architecture",
-      designation: "STM32 Integration",
+      name: "Kamil Grzybek",
+      designation: "Frontend Developer",
       image: "/team/sensor4.jpg",
     },
   ];
 
-  const hardwareComponents = [
-    {
-      name: "Waveshare Sensor Kit",
-      description: "13-module Arduino-compatible sensor array with cables",
-      specs: [
-        "13 different sensors",
-        "Female connector cables",
-        "Arduino compatible",
-        "Educational kit",
-      ],
-      link: "https://botland.com.pl/zestawy-czujnikow/4511-zestaw-13-modulow-z-przewodami-do-arduino-waveshare-9467-5904422309596.html",
-    },
-    {
-      name: "ELEGOO Electronics Kit",
-      description: "Upgraded electronic fun kit with comprehensive tutorials",
-      specs: [
-        "Learning kit",
-        "Multiple projects",
-        "Beginner friendly",
-        "Complete tutorials",
-      ],
-      link: "https://www.elegoo.com/blogs/arduino-projects/elegoo-electronic-fun-kit-upgraded-electronic-fun-kit-tutorial",
-    },
-    {
-      name: "STM32F446RE",
-      description: "High-performance ARM Cortex-M4 microcontroller",
-      specs: [
-        "180 MHz CPU",
-        "512 KB Flash",
-        "128 KB RAM",
-        "Advanced peripherals",
-      ],
-      link: "https://www.st.com/en/microcontrollers-microprocessors/stm32f446re.html",
-    },
-    {
-      name: "ESP32 Microcontroller",
-      description: "Dual-core processor with Wi-Fi and Bluetooth capabilities",
-      specs: [
-        "Wi-Fi & Bluetooth",
-        "Dual-core 240 MHz",
-        "Rich peripherals",
-        "Low power",
-      ],
-      link: "#",
-    },
-  ];
-
-  const dataFlowSteps = [
+  const systemFeatures = [
     {
       id: 1,
-      name: "Environmental Sensing",
-      content:
-        "Multiple sensor modules continuously monitor various environmental parameters in real-time",
+      name: "Real-time Data Collection",
+      content: "Continuous environmental monitoring with multiple sensor types",
     },
     {
       id: 2,
-      name: "Data Acquisition",
+      name: "Local Network Operation",
       content:
-        "STM32 and Arduino systems read analog/digital signals from all connected sensors",
+        "Functions without internet access using Wi-Fi LAN communication",
     },
     {
       id: 3,
-      name: "Signal Processing",
+      name: "Time-series Database",
       content:
-        "Raw sensor data is filtered, calibrated, and converted to meaningful measurements",
+        "InfluxDB 3 Core for efficient historical data storage and queries",
     },
     {
       id: 4,
-      name: "Data Transmission",
-      content:
-        "Processed data is sent via ESP32 to cloud services or local storage systems",
+      name: "Browser Visualization",
+      content: "Real-time data visualization through web interface",
     },
     {
       id: 5,
-      name: "Analysis & Visualization",
+      name: "UDP Broadcast",
       content:
-        "Data is analyzed, patterns are identified, and results are visualized on dashboards",
+        "Wi-Fi communication without requiring server IP address knowledge",
     },
     {
       id: 6,
-      name: "Control Actions",
+      name: "Wireless Operation",
       content:
-        "System can trigger automated responses based on sensor readings and predefined rules",
+        "ESP8266 operates independently without wired connections to server",
     },
   ];
 
-  const potentialApplications = [
+  const dataAnalysis = [
     {
-      title: "Smart Agriculture",
-      description:
-        "Monitor soil conditions, automate irrigation, and optimize crop growth",
-      icon: <IconDroplets className="h-8 w-8" />,
-      metrics: ["Soil moisture", "Temperature", "Light levels", "Humidity"],
+      title: "Temperature & Humidity Trends",
+      description: "Track environmental changes over time for climate analysis",
+      icon: <IconChartLine className="h-8 w-8" />,
+      metrics: ["Daily patterns", "Seasonal changes", "Anomaly detection"],
     },
     {
-      title: "Environmental Monitoring",
+      title: "Air Quality Assessment",
       description:
-        "Track air quality, weather patterns, and pollution levels in real-time",
+        "Monitor indoor air quality for health and comfort optimization",
       icon: <IconCloud className="h-8 w-8" />,
-      metrics: ["Air quality", "Pressure", "Rainfall", "Wind speed"],
+      metrics: ["VOC levels", "Pressure changes", "Humidity balance"],
     },
     {
-      title: "Smart Home Automation",
-      description:
-        "Create responsive environments based on occupancy, light, and temperature",
-      icon: <IconTemperature className="h-8 w-8" />,
-      metrics: ["Room occupancy", "Light levels", "Temperature", "Sound"],
+      title: "Plant Condition Monitoring",
+      description: "Track soil moisture for optimal plant growth conditions",
+      icon: <IconDroplets className="h-8 w-8" />,
+      metrics: ["Soil humidity", "Temperature range", "Watering needs"],
     },
     {
-      title: "Industrial Monitoring",
-      description:
-        "Monitor equipment conditions, detect anomalies, and prevent failures",
-      icon: <IconCircuitBattery className="h-8 w-8" />,
-      metrics: ["Vibration", "Temperature", "Pressure", "Liquid levels"],
+      title: "Anomaly Detection",
+      description: "Identify unusual environmental patterns and trigger alerts",
+      icon: <IconAlertCircle className="h-8 w-8" />,
+      metrics: ["Threshold alerts", "Pattern deviation", "Event logging"],
     },
+  ];
+
+  const futureFeatures = [
+    "Threshold-based alerts and notifications",
+    "Device control integration",
+    "Grafana dashboard integration",
+    "Support for multiple measurement nodes",
+    "Advanced data analytics",
+    "Mobile application",
   ];
 
   if (!isClient) return null;
@@ -261,48 +197,88 @@ export default function SensorArrayPage() {
     <main className="relative min-h-screen bg-black overflow-hidden">
       <BackgroundBeams />
 
-      {/* Floating Navigation */}
-      <FloatingNav navItems={navItems} className="z-50" />
-
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      <section className="relative min-h-[70vh] md:min-h-[80vh] flex items-center justify-center overflow-hidden">
+        {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-          <div className="absolute top-40 right-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-          <div className="absolute -bottom-8 left-20 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+          <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/6798183/pexels-photo-6798183.jpeg')] bg-cover bg-center" />
+          <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-purple-900/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
         </div>
 
-        <div className="container relative z-10 mx-auto px-4 py-20">
-          <LampContainer>
-            <h1 className="mt-8 bg-gradient-to-br from-cyan-400 via-purple-400 to-blue-400 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl">
-              Environmental Sensor Array
+        {/* Gradient Orbs */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        </div>
+
+        <div className="container relative z-10 mx-auto px-4 py-20 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl mx-auto"
+          >
+            {/* Badge */}
+            <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6">
+              <span className="text-sm font-medium text-white">
+                University IoT Project
+              </span>
+            </div>
+
+            {/* Main Title */}
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
+                Environmental Data Collection System
+              </span>
             </h1>
-          </LampContainer>
 
-          <div className="mt-8 text-center">
-            <p className="mt-4 text-xl text-gray-300 max-w-3xl mx-auto">
-              Comprehensive IoT sensor network for real-time environmental
-              monitoring, data collection, and automated control systems
+            <div className="h-1 w-32 bg-gradient-to-r from-cyan-500 to-purple-500 mx-auto rounded-full mb-8" />
+
+            {/* Subtitle */}
+            <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed">
+              Real-time IoT system for environmental monitoring, data
+              collection, and visualization without internet dependency
             </p>
-          </div>
 
-          <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="#sensors">
-              <HoverBorderGradient
-                containerClassName="rounded-full"
-                as="button"
-                className="bg-black text-white flex items-center space-x-2 px-6 py-3"
-              >
-                <span>Explore Sensors</span>
-                <IconArrowRight className="h-4 w-4" />
-              </HoverBorderGradient>
-            </Link>
-            <Link href="#applications">
-              <button className="px-8 py-3 rounded-full bg-gradient-to-b from-purple-500 to-blue-600 text-white font-medium hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300">
-                View Applications
-              </button>
-            </Link>
-          </div>
+            {/* Project Tags */}
+            <div className="flex flex-wrap justify-center gap-3 mb-12">
+              {[
+                "ESP8266",
+                "InfluxDB",
+                "Python Flask",
+                "Real-time",
+                "Wi-Fi",
+                "UDP",
+              ].map((tag) => (
+                <span
+                  key={tag}
+                  className="px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 text-gray-300"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="#architecture">
+                <HoverBorderGradient
+                  containerClassName="rounded-full"
+                  as="button"
+                  className="bg-black text-white flex items-center space-x-2 px-8 py-4 text-lg"
+                >
+                  <span>System Architecture</span>
+                  <IconArrowRight className="h-5 w-5" />
+                </HoverBorderGradient>
+              </Link>
+              <Link href="#analysis">
+                <button className="px-10 py-4 rounded-full bg-gradient-to-b from-cyan-600 to-purple-600 text-white font-medium text-lg hover:shadow-2xl hover:shadow-cyan-500/30 transition-all duration-300">
+                  Data Analysis
+                </button>
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -314,9 +290,8 @@ export default function SensorArrayPage() {
               Project <span className="text-cyan-400">Overview</span>
             </h2>
             <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-              A flexible IoT platform integrating multiple sensor modules with
-              advanced microcontrollers for environmental monitoring and data
-              analysis
+              A complete IoT system for collecting, transmitting, storing, and
+              visualizing environmental data in real-time
             </p>
           </div>
 
@@ -325,41 +300,60 @@ export default function SensorArrayPage() {
               <div className="relative">
                 <div className="relative bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8">
                   <h3 className="text-2xl font-bold text-white mb-6">
-                    Core Concept
+                    System Objectives
                   </h3>
                   <div className="space-y-4">
-                    <p className="text-gray-300">
-                      This project explores the integration of multiple sensor
-                      technologies with modern microcontrollers to create a
-                      versatile environmental monitoring system.
-                    </p>
-                    <p className="text-gray-300">
-                      By combining various sensor modules with STM32 and ESP32
-                      platforms, we can collect comprehensive environmental data
-                      and enable intelligent control systems.
-                    </p>
-                    <div className="pt-4 border-t border-gray-800">
-                      <h4 className="font-bold text-white mb-3">
-                        Primary Focus Areas:
-                      </h4>
-                      <ul className="grid grid-cols-2 gap-3">
-                        <li className="flex items-center gap-2 text-gray-300">
-                          <div className="h-2 w-2 bg-cyan-500 rounded-full"></div>
-                          Data Acquisition
-                        </li>
-                        <li className="flex items-center gap-2 text-gray-300">
-                          <div className="h-2 w-2 bg-purple-500 rounded-full"></div>
-                          Sensor Integration
-                        </li>
-                        <li className="flex items-center gap-2 text-gray-300">
-                          <div className="h-2 w-2 bg-blue-500 rounded-full"></div>
-                          Real-time Monitoring
-                        </li>
-                        <li className="flex items-center gap-2 text-gray-300">
-                          <div className="h-2 w-2 bg-green-500 rounded-full"></div>
-                          Automated Control
-                        </li>
-                      </ul>
+                    <div className="flex items-start gap-3 p-4 rounded-xl hover:bg-gray-800/50 transition-colors">
+                      <div className="p-3 rounded-lg bg-cyan-500/20">
+                        <IconSeo className="h-6 w-6 text-cyan-400" />
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-white mb-1">
+                          Environmental Data Collection
+                        </h4>
+                        <p className="text-gray-300">
+                          Gather real-time data from multiple sensor types
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3 p-4 rounded-xl hover:bg-gray-800/50 transition-colors">
+                      <div className="p-3 rounded-lg bg-purple-500/20">
+                        <IconWifi className="h-6 w-6 text-purple-400" />
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-white mb-1">
+                          Local Network Transmission
+                        </h4>
+                        <p className="text-gray-300">
+                          Send data over Wi-Fi LAN without internet dependency
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3 p-4 rounded-xl hover:bg-gray-800/50 transition-colors">
+                      <div className="p-3 rounded-lg bg-blue-500/20">
+                        <IconDatabase className="h-6 w-6 text-blue-400" />
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-white mb-1">
+                          Time-series Database Storage
+                        </h4>
+                        <p className="text-gray-300">
+                          Efficient storage and querying with InfluxDB
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3 p-4 rounded-xl hover:bg-gray-800/50 transition-colors">
+                      <div className="p-3 rounded-lg bg-green-500/20">
+                        <IconChartAreaLine className="h-6 w-6 text-green-400" />
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-white mb-1">
+                          Browser Visualization
+                        </h4>
+                        <p className="text-gray-300">
+                          Real-time data display through web interface
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -367,43 +361,35 @@ export default function SensorArrayPage() {
 
               <div>
                 <h3 className="text-2xl font-bold text-white mb-6">
-                  Hardware Platform
+                  Technology Stack
                 </h3>
-                <div className="space-y-4">
-                  {hardwareComponents.map((component, index) => (
-                    <motion.a
-                      key={component.name}
-                      href={component.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      initial={{ opacity: 0, x: 50 }}
-                      whileInView={{ opacity: 1, x: 0 }}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {technologyStack.map((tech, index) => (
+                    <motion.div
+                      key={tech.name}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
                       transition={{ delay: index * 0.1 }}
-                      whileHover={{ x: 5 }}
-                      className="block group"
+                      className="group"
                     >
-                      <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-5 hover:border-cyan-500 transition-colors">
-                        <div className="flex justify-between items-start mb-3">
-                          <h4 className="font-bold text-white group-hover:text-cyan-400 transition-colors">
-                            {component.name}
-                          </h4>
-                          <IconArrowRight className="h-4 w-4 text-gray-500 group-hover:text-cyan-400 transition-colors" />
-                        </div>
-                        <p className="text-gray-400 text-sm mb-3">
-                          {component.description}
-                        </p>
-                        <div className="flex flex-wrap gap-2">
-                          {component.specs.map((spec, idx) => (
-                            <span
-                              key={idx}
-                              className="px-2 py-1 bg-gray-800 rounded text-xs text-gray-300"
-                            >
-                              {spec}
-                            </span>
-                          ))}
+                      <div
+                        className={`bg-gradient-to-br ${tech.color} p-0.5 rounded-xl`}
+                      >
+                        <div className="bg-gray-900 rounded-xl p-5 h-full">
+                          <div className="flex items-center gap-4 mb-3">
+                            <div className="p-3 rounded-lg bg-gray-800">
+                              {tech.icon}
+                            </div>
+                            <h3 className="font-bold text-white">
+                              {tech.name}
+                            </h3>
+                          </div>
+                          <p className="text-gray-400 text-sm">
+                            {tech.description}
+                          </p>
                         </div>
                       </div>
-                    </motion.a>
+                    </motion.div>
                   ))}
                 </div>
               </div>
@@ -412,307 +398,238 @@ export default function SensorArrayPage() {
         </div>
       </section>
 
-      {/* Sensors Section */}
+      {/* Architecture Section */}
       <section
-        id="sensors"
+        id="architecture"
         className="py-20 bg-gradient-to-b from-transparent to-gray-900/30"
       >
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Sensor <span className="text-purple-400">Modules</span>
+              System <span className="text-purple-400">Architecture</span>
             </h2>
             <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-              Comprehensive collection of environmental sensors for
-              multi-parameter monitoring
+              Wireless IoT network using UDP broadcast for seamless data
+              transmission
             </p>
           </div>
 
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {sensorModules.map((sensor, index) => (
+            {/* Network Topology */}
+            <div className="relative bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-12">
+              <h3 className="text-2xl font-bold text-white mb-8 text-center">
+                Network Topology
+              </h3>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                {/* ESP8266 Node */}
                 <motion.div
-                  key={sensor.id}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ y: -5 }}
-                  className="group"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  className="text-center"
                 >
-                  <div
-                    className={`bg-gradient-to-br ${sensor.color} p-0.5 rounded-xl`}
+                  <div className="p-6 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl border border-cyan-800 mb-4">
+                    <IconCpu className="h-16 w-16 text-cyan-400 mx-auto" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-2">
+                    ESP8266 Node
+                  </h3>
+                  <p className="text-gray-400">
+                    Reads sensor data and broadcasts via Wi-Fi
+                  </p>
+                  <div className="mt-4 text-sm text-gray-500">
+                    Port 8888 UDP Broadcast
+                  </div>
+                </motion.div>
+
+                {/* Wi-Fi Network */}
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="text-center"
+                >
+                  <div className="relative">
+                    <div className="p-6 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl border border-purple-800 mb-4">
+                      <IconWifi className="h-16 w-16 text-purple-400 mx-auto" />
+                    </div>
+                    <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-2xl blur-lg opacity-20 -z-10"></div>
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-2">
+                    Wi-Fi LAN
+                  </h3>
+                  <p className="text-gray-400">
+                    Local network communication without internet
+                  </p>
+                  <div className="mt-4 text-sm text-gray-500">
+                    UDP Broadcast Network
+                  </div>
+                </motion.div>
+
+                {/* Server */}
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                  className="text-center"
+                >
+                  <div className="p-6 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl border border-blue-800 mb-4">
+                    <IconServer className="h-16 w-16 text-blue-400 mx-auto" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-2">
+                    Flask Server
+                  </h3>
+                  <p className="text-gray-400">
+                    Receives data and stores in InfluxDB
+                  </p>
+                  <div className="mt-4 text-sm text-gray-500">
+                    Python + Flask Application
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Connection Flow */}
+              <div className="hidden md:block mt-12">
+                <div className="flex items-center justify-between px-8">
+                  <div className="h-0.5 flex-1 bg-gradient-to-r from-cyan-500 via-cyan-500 to-purple-500"></div>
+                  <div className="h-0.5 flex-1 bg-gradient-to-r from-purple-500 via-purple-500 to-blue-500"></div>
+                </div>
+              </div>
+            </div>
+
+            {/* Sensor Modules */}
+            <div>
+              <h3 className="text-2xl font-bold text-white mb-8 text-center">
+                Environmental Sensors
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {sensorModules.map((sensor) => (
+                  <motion.div
+                    key={sensor.id}
+                    whileHover={{ y: -5 }}
+                    className="group"
                   >
-                    <div className="bg-gray-900 rounded-xl p-5 h-full">
-                      <div className="flex items-center gap-4 mb-4">
-                        <div className="p-3 rounded-lg bg-gray-800">
-                          {sensor.icon}
-                        </div>
-                        <div>
+                    <div
+                      className={`bg-gradient-to-br ${sensor.color} p-0.5 rounded-xl h-full`}
+                    >
+                      <div className="bg-gray-900 rounded-xl p-6 h-full">
+                        <div className="flex items-center gap-4 mb-4">
+                          <div className="p-3 rounded-lg bg-gray-800">
+                            {sensor.icon}
+                          </div>
                           <h3 className="font-bold text-white text-lg">
                             {sensor.name}
                           </h3>
-                          <p className="text-gray-400 text-sm">
-                            {sensor.description}
-                          </p>
                         </div>
-                      </div>
-                      <div className="pt-4 border-t border-gray-800">
-                        <div className="text-xs text-gray-500">
-                          Sample Applications
-                        </div>
-                        <div className="mt-2 flex gap-2">
-                          {["Monitoring", "Detection", "Control"].map(
-                            (tag, idx) => (
+                        <p className="text-gray-400 mb-4">
+                          {sensor.description}
+                        </p>
+                        <div className="pt-4 border-t border-gray-800">
+                          <h4 className="font-bold text-white mb-3">
+                            Measurements
+                          </h4>
+                          <div className="flex flex-wrap gap-2">
+                            {sensor.features.map((feature, idx) => (
                               <span
                                 key={idx}
-                                className="px-2 py-1 bg-gray-800 rounded text-xs text-gray-300"
+                                className="px-3 py-1 bg-gray-800 rounded-full text-sm text-gray-300"
                               >
-                                {tag}
+                                {feature}
                               </span>
-                            )
-                          )}
+                            ))}
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </motion.div>
-              ))}
+                  </motion.div>
+                ))}
+              </div>
             </div>
 
-            {/* Sensor Network Visualization */}
+            {/* System Workflow - Simple Cards */}
             <div className="mt-16">
-              <div className="relative bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8">
-                <h3 className="text-2xl font-bold text-white mb-6 text-center">
-                  Sensor Network Architecture
-                </h3>
-                <div className="flex flex-col items-center">
-                  <div className="relative w-full max-w-3xl">
-                    {/* Central Hub */}
-                    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                      <div className="p-6 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-full">
-                        <IconCpu className="h-12 w-12 text-white" />
+              <h3 className="text-2xl font-bold text-white mb-8 text-center">
+                System Workflow
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {systemFeatures.map((feature, index) => (
+                  <motion.div
+                    key={feature.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.15 }}
+                    whileHover={{ scale: 1.02 }}
+                    className="relative group"
+                  >
+                    {/* Card */}
+                    <div className="relative bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-6 h-full overflow-hidden">
+                      {/* Animated background gradient */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                      {/* Step number */}
+                      <div className="inline-block px-4 py-2 mb-4 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-full border border-cyan-500/30">
+                        <span className="font-bold text-white">
+                          Step {feature.id}
+                        </span>
                       </div>
-                      <div className="text-center mt-4">
-                        <div className="font-bold text-white">
-                          ESP32/STM32 Hub
-                        </div>
-                        <div className="text-sm text-gray-400">
-                          Central Processor
-                        </div>
-                      </div>
+
+                      {/* Content */}
+                      <h4 className="text-xl font-bold text-white mb-3">
+                        {feature.name}
+                      </h4>
+                      <p className="text-gray-300">{feature.content}</p>
+
+                      {/* Bottom gradient line */}
+                      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500 via-purple-500 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
                     </div>
-
-                    {/* Sensor Nodes */}
-                    {[0, 1, 2, 3].map((i) => (
-                      <div
-                        key={i}
-                        className="absolute"
-                        style={{
-                          top: `${50 + 40 * Math.sin((i * Math.PI) / 2)}%`,
-                          left: `${50 + 40 * Math.cos((i * Math.PI) / 2)}%`,
-                        }}
-                      >
-                        <div className="p-4 bg-gray-800 rounded-xl border border-cyan-800">
-                          <IconSeo className="h-8 w-8 text-cyan-400" />
-                        </div>
-                      </div>
-                    ))}
-
-                    {/* Connection Lines */}
-                    <svg className="absolute inset-0 w-full h-full">
-                      {[0, 1, 2, 3].map((i) => (
-                        <line
-                          key={i}
-                          x1="50%"
-                          y1="50%"
-                          x2={`${50 + 40 * Math.cos((i * Math.PI) / 2)}%`}
-                          y2={`${50 + 40 * Math.sin((i * Math.PI) / 2)}%`}
-                          stroke="url(#gradient)"
-                          strokeWidth="2"
-                          strokeDasharray="4"
-                        />
-                      ))}
-                      <defs>
-                        <linearGradient
-                          id="gradient"
-                          x1="0%"
-                          y1="0%"
-                          x2="100%"
-                          y2="100%"
-                        >
-                          <stop
-                            offset="0%"
-                            stopColor="#22d3ee"
-                            stopOpacity="0.5"
-                          />
-                          <stop
-                            offset="100%"
-                            stopColor="#8b5cf6"
-                            stopOpacity="0.5"
-                          />
-                        </linearGradient>
-                      </defs>
-                    </svg>
-                  </div>
-                  <p className="text-gray-400 text-center mt-12 max-w-2xl">
-                    Distributed sensor network with centralized data processing.
-                    Multiple sensor modules communicate with the main controller
-                    which aggregates, processes, and transmits data for
-                    analysis.
-                  </p>
-                </div>
+                  </motion.div>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Data Flow Section */}
-      <section id="dataflow" className="py-20 relative">
+      {/* Data Analysis Section */}
+      <section id="analysis" className="py-20 relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Data <span className="text-blue-400">Processing Pipeline</span>
-            </h2>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <CardStack items={dataFlowSteps} />
-          </div>
-
-          {/* Real-time Visualization */}
-          <div className="mt-16 max-w-6xl mx-auto">
-            <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                  <h3 className="text-2xl font-bold text-white mb-6">
-                    Real-time Data Dashboard
-                  </h3>
-                  <p className="text-gray-300 mb-6">
-                    The system provides comprehensive visualization of sensor
-                    data through interactive dashboards, enabling real-time
-                    monitoring and analysis.
-                  </p>
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3">
-                      <IconChartLine className="h-6 w-6 text-green-400" />
-                      <div>
-                        <div className="font-bold text-white">
-                          Live Data Streaming
-                        </div>
-                        <div className="text-sm text-gray-400">
-                          Real-time sensor readings and trends
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <IconDatabase className="h-6 w-6 text-blue-400" />
-                      <div>
-                        <div className="font-bold text-white">
-                          Historical Analysis
-                        </div>
-                        <div className="text-sm text-gray-400">
-                          Long-term data storage and pattern recognition
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <IconBroadcast className="h-6 w-6 text-purple-400" />
-                      <div>
-                        <div className="font-bold text-white">Alert System</div>
-                        <div className="text-sm text-gray-400">
-                          Automated notifications for critical conditions
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="relative">
-                  <div className="bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-xl p-6">
-                    <div className="aspect-video bg-gradient-to-br from-cyan-900/20 to-purple-900/20 rounded-lg flex items-center justify-center mb-4">
-                      <div className="text-center">
-                        <IconChartLine className="h-16 w-16 text-cyan-400 mx-auto mb-4" />
-                        <p className="text-gray-400">
-                          Data Visualization Dashboard
-                        </p>
-                      </div>
-                    </div>
-                    <div className="grid grid-cols-3 gap-4">
-                      <div className="text-center p-3 bg-gray-800/30 rounded-lg">
-                        <div className="text-xl font-bold text-cyan-400 mb-1">
-                          13+
-                        </div>
-                        <div className="text-xs text-gray-400">
-                          Sensor Types
-                        </div>
-                      </div>
-                      <div className="text-center p-3 bg-gray-800/30 rounded-lg">
-                        <div className="text-xl font-bold text-green-400 mb-1">
-                          24/7
-                        </div>
-                        <div className="text-xs text-gray-400">Monitoring</div>
-                      </div>
-                      <div className="text-center p-3 bg-gray-800/30 rounded-lg">
-                        <div className="text-xl font-bold text-purple-400 mb-1">
-                          Real-time
-                        </div>
-                        <div className="text-xs text-gray-400">Updates</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Applications Section */}
-      <section
-        id="applications"
-        className="py-20 bg-gradient-to-b from-transparent to-gray-900/30"
-      >
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Potential <span className="text-green-400">Applications</span>
+              Data <span className="text-green-400">Analysis</span>
             </h2>
             <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-              Versatile platform adaptable to various environmental monitoring
-              and control scenarios
+              Comprehensive environmental insights through real-time data
+              monitoring
             </p>
           </div>
 
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {potentialApplications.map((app, index) => (
+              {dataAnalysis.map((analysis, index) => (
                 <motion.div
-                  key={app.title}
+                  key={analysis.title}
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.2 }}
                   className="relative group"
                 >
-                  <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
-                  <div className="relative bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-6">
+                  <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 to-green-500 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+                  <div className="relative bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-6 h-full">
                     <div className="flex items-start gap-4 mb-6">
-                      <div className="p-3 rounded-xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20">
-                        {app.icon}
+                      <div className="p-3 rounded-xl bg-gradient-to-br from-cyan-500/20 to-green-500/20">
+                        {analysis.icon}
                       </div>
                       <div>
                         <h3 className="text-xl font-bold text-white mb-2">
-                          {app.title}
+                          {analysis.title}
                         </h3>
-                        <p className="text-gray-300">{app.description}</p>
+                        <p className="text-gray-300">{analysis.description}</p>
                       </div>
                     </div>
                     <div className="pt-4 border-t border-gray-800">
-                      <h4 className="font-bold text-white mb-3">
-                        Monitored Parameters
-                      </h4>
+                      <h4 className="font-bold text-white mb-3">Key Metrics</h4>
                       <div className="flex flex-wrap gap-2">
-                        {app.metrics.map((metric, idx) => (
+                        {analysis.metrics.map((metric, idx) => (
                           <span
                             key={idx}
                             className="px-3 py-1 bg-gray-800 rounded-full text-sm text-gray-300"
@@ -726,6 +643,141 @@ export default function SensorArrayPage() {
                 </motion.div>
               ))}
             </div>
+
+            {/* InfluxDB Integration */}
+            <div className="mt-16">
+              <div className="relative bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-6">
+                      InfluxDB 3 Core Integration
+                    </h3>
+                    <div className="space-y-4 mb-8">
+                      <div className="flex items-start gap-3">
+                        <div className="p-2 bg-purple-500/20 rounded-lg mt-1">
+                          <IconDatabase className="h-5 w-5 text-purple-400" />
+                        </div>
+                        <p className="text-gray-300">
+                          Time-series data storage optimized for environmental
+                          metrics
+                        </p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <div className="p-2 bg-blue-500/20 rounded-lg mt-1">
+                          <IconChartLine className="h-5 w-5 text-blue-400" />
+                        </div>
+                        <p className="text-gray-300">
+                          Fast query performance for real-time data
+                          visualization
+                        </p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <div className="p-2 bg-green-500/20 rounded-lg mt-1">
+                          <IconChartAreaLine className="h-5 w-5 text-green-400" />
+                        </div>
+                        <p className="text-gray-300">
+                          Historical data analysis and trend identification
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="relative">
+                    <div className="bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-xl p-6">
+                      <div className="aspect-video bg-gradient-to-br from-purple-900/20 to-blue-900/20 rounded-lg flex items-center justify-center mb-4">
+                        <div className="text-center">
+                          <IconDatabase className="h-16 w-16 text-purple-400 mx-auto mb-4" />
+                          <p className="text-gray-400">Real-time Data Stream</p>
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-2 gap-4">
+                        <div className="text-center p-3 bg-gray-800/30 rounded-lg">
+                          <div className="text-xl font-bold text-cyan-400 mb-1">
+                            Real-time
+                          </div>
+                          <div className="text-xs text-gray-400">
+                            Data Ingestion
+                          </div>
+                        </div>
+                        <div className="text-center p-3 bg-gray-800/30 rounded-lg">
+                          <div className="text-xl font-bold text-green-400 mb-1">
+                            Fast Queries
+                          </div>
+                          <div className="text-xs text-gray-400">
+                            Performance
+                          </div>
+                        </div>
+                        <div className="text-center p-3 bg-gray-800/30 rounded-lg">
+                          <div className="text-xl font-bold text-blue-400 mb-1">
+                            Historical
+                          </div>
+                          <div className="text-xs text-gray-400">
+                            Data Storage
+                          </div>
+                        </div>
+                        <div className="text-center p-3 bg-gray-800/30 rounded-lg">
+                          <div className="text-xl font-bold text-purple-400 mb-1">
+                            Time-series
+                          </div>
+                          <div className="text-xs text-gray-400">Optimized</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Future Development */}
+      <section className="py-20 bg-gradient-to-b from-transparent to-gray-900/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Future <span className="text-yellow-400">Development</span>
+            </h2>
+            <p className="text-gray-400 text-lg max-w-3xl mx-auto">
+              Planned enhancements and expansion possibilities for the system
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="relative bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-6">
+                    Upcoming Features
+                  </h3>
+                  <ul className="space-y-3">
+                    {futureFeatures.map((feature, index) => (
+                      <motion.li
+                        key={feature}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.1 }}
+                        className="flex items-center gap-3 text-gray-300"
+                      >
+                        <div className="h-2 w-2 bg-yellow-500 rounded-full"></div>
+                        {feature}
+                      </motion.li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="flex items-center justify-center">
+                  <div className="text-center p-6 bg-gradient-to-br from-yellow-500/10 to-orange-500/10 rounded-2xl border border-yellow-800">
+                    <IconAlertCircle className="h-16 w-16 text-yellow-400 mx-auto mb-4" />
+                    <h4 className="text-xl font-bold text-white mb-2">
+                      System Expansion
+                    </h4>
+                    <p className="text-gray-400">
+                      Scalable architecture for multiple nodes and integrations
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -738,8 +790,7 @@ export default function SensorArrayPage() {
               Development <span className="text-cyan-400">Team</span>
             </h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              The team exploring sensor technologies and IoT integration for
-              environmental monitoring
+              The team behind the Environmental Data Collection System
             </p>
           </div>
 
@@ -750,19 +801,15 @@ export default function SensorArrayPage() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-white mb-4">
-                Project Flexibility
+                Project Achievement
               </h3>
               <p className="text-gray-300 leading-relaxed">
-                This project serves as a foundational platform for exploring
-                sensor technologies. The modular design allows for easy
-                expansion with additional sensors, integration with different
-                microcontrollers, and adaptation to specific monitoring
-                scenarios as research progresses.
+                Successfully developed a complete IoT ecosystem for
+                environmental monitoring that operates independently of internet
+                connectivity. The system demonstrates practical application of
+                wireless sensor networks, time-series databases, and real-time
+                web visualization in a university research context.
               </p>
-              <div className="mt-8 inline-flex items-center gap-2 text-cyan-400">
-                <IconArrowRight className="h-4 w-4" />
-                <span>More details to be added as project develops</span>
-              </div>
             </div>
           </div>
         </div>
@@ -774,7 +821,7 @@ export default function SensorArrayPage() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-6 md:mb-0">
               <h3 className="text-xl font-bold text-white mb-2">
-                Environmental Sensor Array
+                Environmental Data Collection System
               </h3>
               <p className="text-gray-500">University IoT Research Project</p>
             </div>
@@ -795,8 +842,9 @@ export default function SensorArrayPage() {
           </div>
           <div className="mt-8 pt-8 border-t border-gray-900 text-center">
             <p className="text-gray-600 text-sm">
-              © {new Date().getFullYear()} University IoT Research Lab. Modular
-              sensor platform for environmental monitoring and data analysis.
+              © {new Date().getFullYear()} University IoT Research Lab.
+              Real-time environmental monitoring system using ESP8266, InfluxDB,
+              and Flask.
             </p>
           </div>
         </div>
