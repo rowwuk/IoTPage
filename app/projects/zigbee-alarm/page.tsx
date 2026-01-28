@@ -4,7 +4,6 @@ import { BackgroundBeams } from "@/components/ui/background-beams";
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import {
-  IconArrowLeft,
   IconArrowRight,
   IconBolt,
   IconCamera,
@@ -52,15 +51,6 @@ export default function ZigBeeAlarmPage() {
       designation: "Security Specialist",
       image: "../user.jpg",
     },
-  ];
-
-  const navItems = [
-    { name: "Home", link: "/", icon: <IconArrowLeft className="h-4 w-4" /> },
-    { name: "Overview", link: "#overview" },
-    { name: "Architecture", link: "#architecture" },
-    { name: "Features", link: "#features" },
-    { name: "Team", link: "#team" },
-    { name: "Demo", link: "#demo" },
   ];
 
   const technologyStack = [

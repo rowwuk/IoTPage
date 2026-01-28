@@ -1,4 +1,3 @@
-import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { FlipWords } from "@/components/ui/flip-words";
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
@@ -39,14 +38,6 @@ export default function Home() {
       tags: ["ESP8266", "InfluxDB", "Python", "Real-time"],
       icon: <IconSeedling className="h-6 w-6" />,
     },
-  ];
-
-  const navItems = [
-    { name: "Home", link: "/" },
-    { name: "Projects", link: "#projects" },
-    { name: "Team", link: "#team" },
-    { name: "Research", link: "#research" },
-    { name: "Contact", link: "#contact" },
   ];
 
   const words = [
@@ -110,14 +101,14 @@ export default function Home() {
                 as="button"
                 className="bg-black text-white flex items-center space-x-2 px-8 py-4 text-lg"
               >
-                <span>Explore Projects</span>
+                <span>Przeglądaj Projekty</span>
                 <IconArrowRight className="h-5 w-5" />
               </HoverBorderGradient>
             </Link>
-            <Link href="#research">
+            <Link href={`/projects/website`}>
               <button className="px-10 py-4 rounded-full w-full bg-linear-to-b from-blue-600 to-purple-600 text-white font-medium text-lg hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-300 group">
                 <span className="flex items-center gap-2 justify-center">
-                  Our Research
+                  Strona Jako Projekt
                   <IconArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </span>
               </button>
@@ -185,11 +176,10 @@ export default function Home() {
         className="py-20 bg-linear-to-b from-transparent to-gray-900/30"
       >
         <div className="container mx-auto px-4">
-
           <div className="relative flex h-125 flex-col items-center justify-center overflow-hidden rounded-lg">
             <GridPattern
               className={cn(
-                "mask-[radial-gradient(300px_circle_at_center,white,transparent)]"
+                "mask-[radial-gradient(300px_circle_at_center,white,transparent)]",
               )}
             />
             <p className="text-lg font-bold md:text-xl text-gray-300 text-center leading-relaxed max-sm:w-full sm:w-[50%]">
