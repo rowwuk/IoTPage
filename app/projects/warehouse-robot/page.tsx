@@ -408,28 +408,28 @@ export default function WarehouseRobotPage() {
                     <div className="text-center mb-4">
                       <IconCpu className="h-12 w-12 text-blue-400 mx-auto mb-3" />
                       <h3 className="text-xl font-bold text-white">
-                        Processing Layer
+                        Warstwa Przetwarzania
                       </h3>
                       <p className="text-gray-400 mt-1">
-                        Intelligence & Algorithms
+                        Inteligencja i Algorytmy
                       </p>
                     </div>
                     <ul className="space-y-3 text-gray-300">
                       <li className="flex items-center gap-2">
                         <div className="h-2 w-2 bg-blue-500 rounded-full"></div>
-                        SLAM Algorithms
+                        Algorytm SLAM
                       </li>
                       <li className="flex items-center gap-2">
                         <div className="h-2 w-2 bg-blue-500 rounded-full"></div>
-                        Dijkstra Pathfinding
+                        Wyszukiwanie Ścieżki Dijkstry
                       </li>
                       <li className="flex items-center gap-2">
                         <div className="h-2 w-2 bg-blue-500 rounded-full"></div>
-                        ROS Framework
+                        Framework ROS
                       </li>
                       <li className="flex items-center gap-2">
                         <div className="h-2 w-2 bg-blue-500 rounded-full"></div>
-                        Real-time Mapping
+                        Mapowanie W Czasie Rzeczywistym
                       </li>
                     </ul>
                   </div>
@@ -447,10 +447,10 @@ export default function WarehouseRobotPage() {
                     <div className="text-center mb-4">
                       <Icon3dCubeSphere className="h-12 w-12 text-purple-400 mx-auto mb-3" />
                       <h3 className="text-xl font-bold text-white">
-                        Visualization Layer
+                        Warstwa Wizualizacji
                       </h3>
                       <p className="text-gray-400 mt-1">
-                        3D Simulation & Interface
+                        Symulacja 3D i Interfejs
                       </p>
                     </div>
                     <ul className="space-y-3 text-gray-300">
@@ -460,15 +460,15 @@ export default function WarehouseRobotPage() {
                       </li>
                       <li className="flex items-center gap-2">
                         <div className="h-2 w-2 bg-purple-500 rounded-full"></div>
-                        Blender 3D Models
+                        3D Modele w Blenderze
                       </li>
                       <li className="flex items-center gap-2">
                         <div className="h-2 w-2 bg-purple-500 rounded-full"></div>
-                        Real-time Web Interface
+                        Interfejs Webowy Działający w Czasie Rzeczywistym
                       </li>
                       <li className="flex items-center gap-2">
                         <div className="h-2 w-2 bg-purple-500 rounded-full"></div>
-                        Map Visualization
+                        Wizualizacja Mapy
                       </li>
                     </ul>
                   </div>
@@ -486,7 +486,7 @@ export default function WarehouseRobotPage() {
               {/* Workflow - Option 3 Cards */}
               <div>
                 <h3 className="text-2xl font-bold text-white mb-8 text-center">
-                  Autonomous Workflow
+                  Autonomiczny Przepływ Pracy
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {workflowSteps.map((step, index) => (
@@ -533,11 +533,11 @@ export default function WarehouseRobotPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Technology <span className="text-purple-400">Stack</span>
+              <span className="text-purple-400">Stos</span> Technologiczny
             </h2>
             <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-              Comprehensive suite of technologies powering the autonomous
-              warehouse robot
+              Kompleksowy zestaw technologii zasilających autonomicznego
+              robota magazynowego
             </p>
           </div>
 
@@ -568,18 +568,17 @@ export default function WarehouseRobotPage() {
           <div className="mt-16 max-w-4xl mx-auto">
             <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-white mb-6 text-center">
-                Programming Languages
+                Języki Programowania
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="text-center p-6 bg-gray-800/50 rounded-xl">
                   <IconCode className="h-12 w-12 text-green-400 mx-auto mb-4" />
                   <h4 className="text-xl font-bold text-white mb-2">Python</h4>
                   <p className="text-gray-400">
-                    Server-side logic, data processing, and algorithm
-                    implementation
+                    Logika po stronie serwera, przetwarzanie danych i implementacja algorytmów
                   </p>
                   <div className="mt-4 inline-block px-4 py-1 bg-green-500/20 rounded-full text-green-400 text-sm">
-                    Primary Server Language
+                    Podstawowy Język Serwera
                   </div>
                 </div>
                 <div className="text-center p-6 bg-gray-800/50 rounded-xl">
@@ -588,7 +587,7 @@ export default function WarehouseRobotPage() {
                     C++ / Arduino
                   </h4>
                   <p className="text-gray-400">
-                    Microcontroller programming for real-time hardware control
+                    Programowanie mikrokontrolerów do sterowania sprzętem w czasie rzeczywistym
                   </p>
                   <div className="mt-4 inline-block px-4 py-1 bg-blue-500/20 rounded-full text-blue-400 text-sm">
                     Embedded Systems
@@ -605,11 +604,11 @@ export default function WarehouseRobotPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Development <span className="text-green-400">Team</span>
+              <span className="text-green-400">Zespół</span> Deweloperski
             </h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              The multidisciplinary team behind this advanced autonomous
-              robotics system
+              Wielodyscyplinarny zespół odpowiedzialny za ten zaawansowany autonomiczny
+              system robotyki
             </p>
           </div>
 
@@ -621,12 +620,12 @@ export default function WarehouseRobotPage() {
             <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8">
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-bold text-white mb-4">
-                  Project Achievements
+                  Osiągnięcia Projektu
                 </h3>
                 <p className="text-gray-300">
-                  Successfully integrated hardware sensors with advanced
-                  algorithms and real-time visualization, creating a complete
-                  autonomous navigation system for warehouse environments.
+                  Pomyślnie zintegrowaliśmy czujniki sprzętowe z zaawansowanymi
+algorytmami i wizualizacją w czasie rzeczywistym, tworząc kompletny
+autonomiczny system nawigacji dla środowisk magazynowych.
                 </p>
               </div>
 

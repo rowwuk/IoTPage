@@ -58,37 +58,37 @@ export default function ZigBeeAlarmPage() {
       id: 1,
       name: "Raspberry Pi 5",
       icon: <IconBolt className="h-8 w-8 text-green-500" />,
-      description: "Main processing unit running the entire system",
+      description: "Główna jednostka przetwarzająca obsługująca cały system",
     },
     {
       id: 2,
       name: "ZigBee2MQTT",
       icon: <IconWifi className="h-8 w-8 text-blue-500" />,
-      description: "ZigBee to MQTT bridge for device communication",
+      description: "Most ZigBee do MQTT do komunikacji między urządzeniami",
     },
     {
       id: 3,
       name: "MQTT Broker",
       icon: <IconCloud className="h-8 w-8 text-purple-500" />,
-      description: "Message broker for IoT communication protocol",
+      description: "ZigBee to MQTT bridge for communication between devices",
     },
     {
       id: 4,
       name: "Flask + Python",
       icon: <IconShield className="h-8 w-8 text-yellow-500" />,
-      description: "Backend server framework",
+      description: "Struktura serwera zaplecza",
     },
     {
       id: 5,
       name: "RFID & Face ID",
       icon: <IconFingerprint className="h-8 w-8 text-red-500" />,
-      description: "Multi-factor authentication methods",
+      description: "Metody uwierzytelniania wieloskładnikowego",
     },
     {
       id: 6,
       name: "Telegram Bot",
       icon: <IconDeviceMobile className="h-8 w-8 text-cyan-500" />,
-      description: "Remote control and notifications",
+      description: "Zdalne sterowanie i powiadomienia",
     },
   ];
 
@@ -292,7 +292,7 @@ export default function ZigBeeAlarmPage() {
                       <IconUsers className="h-5 w-5 text-purple-400" />
                     </div>
                     <p className="text-gray-300">
-                      Dodaj zarządzanie wieloma użytkownikami z poziomami
+                      Dodanie zarządzania wieloma użytkownikami z poziomami
                       uprawnień
                     </p>
                   </li>
@@ -301,7 +301,7 @@ export default function ZigBeeAlarmPage() {
                       <IconCamera className="h-5 w-5 text-cyan-400" />
                     </div>
                     <p className="text-gray-300">
-                      Zintegruj funkcję Face ID, aby zwiększyć bezpieczeństwo
+                      Integracja funkcji Face ID, aby zwiększyć bezpieczeństwo
                     </p>
                   </li>
                 </ul>
@@ -355,10 +355,10 @@ export default function ZigBeeAlarmPage() {
                     <IconWifi className="h-12 w-12 text-blue-400 mx-auto" />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">
-                    ZigBee Sensors
+                    Czujniki ZigBee
                   </h3>
                   <p className="text-gray-400">
-                    Motion detection and environmental monitoring
+                    Wykrywanie ruchu i monitorowanie środowiska
                   </p>
                 </motion.div>
 
@@ -392,10 +392,10 @@ export default function ZigBeeAlarmPage() {
                     <IconDeviceMobile className="h-12 w-12 text-purple-400 mx-auto" />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">
-                    Web App & Telegram
+                    Aplikacja Webowa & Telegram
                   </h3>
                   <p className="text-gray-400">
-                    Remote control and alarm management
+                    Zdalne sterowanie i zarządzanie alarmami
                   </p>
                 </motion.div>
               </div>
@@ -411,7 +411,7 @@ export default function ZigBeeAlarmPage() {
               {/* Workflow */}
               <div className="pt-4">
                 <h3 className="text-2xl font-bold text-white mb-8 text-center">
-                  System Workflow
+                  Przebieg Pracy Systemu
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {systemFlow.map((step, index) => (
@@ -431,7 +431,7 @@ export default function ZigBeeAlarmPage() {
                         {/* Step number */}
                         <div className="inline-block px-4 py-2 mb-4 bg-gra≤`≥dient-to-r from-green-500/20 to-blue-500/20 rounded-full border border-green-500/30">
                           <span className="font-bold text-white">
-                            Step {step.id}
+                            Krok {step.id}
                           </span>
                         </div>
 
@@ -458,7 +458,7 @@ export default function ZigBeeAlarmPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Advanced <span className="text-purple-400">Features</span>
+              <span className="text-purple-400">Funkcje</span> Zaawansowane
             </h2>
           </div>
 
@@ -501,11 +501,10 @@ export default function ZigBeeAlarmPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Development <span className="text-cyan-400">Team</span>
+              <span className="text-cyan-400">Zespół</span> Deweloperski
             </h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              The talented group of students behind this innovative IoT security
-              system
+              Utalentowana grupa studentów stojąca za tym innowacyjnym systemem bezpieczeństwa IoT
             </p>
           </div>
 
@@ -515,10 +514,10 @@ export default function ZigBeeAlarmPage() {
 
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-lg text-gray-300 leading-relaxed">
-              This project was developed as part of our university coursework,
-              demonstrating practical application of IoT protocols, embedded
-              systems, and security principles in a real-world home automation
-              scenario.
+              Projekt ten został opracowany w ramach zajęć uniwersyteckich i
+              pokazuje praktyczne zastosowanie protokołów IoT, systemów wbudowanych
+              i zasad bezpieczeństwa w rzeczywistym scenariuszu automatyki domowej
+              .
             </p>
           </div>
         </div>

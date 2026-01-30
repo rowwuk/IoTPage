@@ -309,10 +309,10 @@ export default function SensorArrayPage() {
                       </div>
                       <div>
                         <h4 className="font-bold text-white mb-1">
-                          Environmental Data Collection
+                          Gromadzenie Danych Środowiskowych
                         </h4>
                         <p className="text-gray-300">
-                          Gather real-time data from multiple sensor types
+                          Zbieranie danych w czasie rzeczywistym z wielu typów czujników
                         </p>
                       </div>
                     </div>
@@ -322,10 +322,10 @@ export default function SensorArrayPage() {
                       </div>
                       <div>
                         <h4 className="font-bold text-white mb-1">
-                          Local Network Transmission
+                          Transmisja w Sieci Lokalnej
                         </h4>
                         <p className="text-gray-300">
-                          Send data over Wi-Fi LAN without internet dependency
+                          Wysyłanie danych przez sieć Wi-Fi LAN bez konieczności korzystania z internetu
                         </p>
                       </div>
                     </div>
@@ -335,10 +335,10 @@ export default function SensorArrayPage() {
                       </div>
                       <div>
                         <h4 className="font-bold text-white mb-1">
-                          Time-series Database Storage
+                          Baza Danych Szeregów Czasowych
                         </h4>
                         <p className="text-gray-300">
-                          Efficient storage and querying with InfluxDB
+                          Wydajne przechowywanie i wyszukiwanie danych dzięki InfluxDB
                         </p>
                       </div>
                     </div>
@@ -348,10 +348,10 @@ export default function SensorArrayPage() {
                       </div>
                       <div>
                         <h4 className="font-bold text-white mb-1">
-                          Browser Visualization
+                          Wizualizacja Przeglądarkowa
                         </h4>
                         <p className="text-gray-300">
-                          Real-time data display through web interface
+                          Wyświetlanie danych w czasie rzeczywistym za pośrednictwem interfejsu internetowego
                         </p>
                       </div>
                     </div>
@@ -418,7 +418,7 @@ export default function SensorArrayPage() {
             {/* Network Topology */}
             <div className="relative bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-12">
               <h3 className="text-2xl font-bold text-white mb-8 text-center">
-                Network Topology
+                Topologia Sieci
               </h3>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
@@ -432,10 +432,10 @@ export default function SensorArrayPage() {
                     <IconCpu className="h-16 w-16 text-cyan-400 mx-auto" />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">
-                    ESP8266 Node
+                    Węzeł ESP8266
                   </h3>
                   <p className="text-gray-400">
-                    Reads sensor data and broadcasts via Wi-Fi
+                    Odczytuje dane z czujników i transmituje je przez Wi-Fi.
                   </p>
                   <div className="mt-4 text-sm text-gray-500">
                     Port 8888 UDP Broadcast
@@ -459,7 +459,7 @@ export default function SensorArrayPage() {
                     Wi-Fi LAN
                   </h3>
                   <p className="text-gray-400">
-                    Local network communication without internet
+                    Komunikacja w sieci lokalnej bez internetu
                   </p>
                   <div className="mt-4 text-sm text-gray-500">
                     UDP Broadcast Network
@@ -477,13 +477,13 @@ export default function SensorArrayPage() {
                     <IconServer className="h-16 w-16 text-blue-400 mx-auto" />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">
-                    Flask Server
+                    Serwer Flask
                   </h3>
                   <p className="text-gray-400">
-                    Receives data and stores in InfluxDB
+                    Odbiera dane i przechowuje je w InfluxDB
                   </p>
                   <div className="mt-4 text-sm text-gray-500">
-                    Python + Flask Application
+                    Aplikacja Python + Flask
                   </div>
                 </motion.div>
               </div>
@@ -500,7 +500,7 @@ export default function SensorArrayPage() {
             {/* Sensor Modules */}
             <div>
               <h3 className="text-2xl font-bold text-white mb-8 text-center">
-                Environmental Sensors
+                Czujniki Środowiskowe
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {sensorModules.map((sensor) => (
@@ -526,7 +526,7 @@ export default function SensorArrayPage() {
                         </p>
                         <div className="pt-4 border-t border-gray-800">
                           <h4 className="font-bold text-white mb-3">
-                            Measurements
+                            Pomiary
                           </h4>
                           <div className="flex flex-wrap gap-2">
                             {sensor.features.map((feature, idx) => (
@@ -549,7 +549,7 @@ export default function SensorArrayPage() {
             {/* System Workflow - Simple Cards */}
             <div className="mt-16">
               <h3 className="text-2xl font-bold text-white mb-8 text-center">
-                System Workflow
+                Przebieg Pracy Systemu
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {systemFeatures.map((feature, index) => (
@@ -569,7 +569,7 @@ export default function SensorArrayPage() {
                       {/* Step number */}
                       <div className="inline-block px-4 py-2 mb-4 bg-linear-to-r from-cyan-500/20 to-purple-500/20 rounded-full border border-cyan-500/30">
                         <span className="font-bold text-white">
-                          Step {feature.id}
+                          Krok {feature.id}
                         </span>
                       </div>
 
@@ -595,11 +595,10 @@ export default function SensorArrayPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Data <span className="text-green-400">Analysis</span>
+              <span className="text-green-400">Analysis</span> Danych
             </h2>
             <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-              Comprehensive environmental insights through real-time data
-              monitoring
+              Kompleksowe informacje dotyczące środowiska dzięki monitorowaniu danych w czasie rzeczywistym
             </p>
           </div>
 
@@ -627,7 +626,7 @@ export default function SensorArrayPage() {
                       </div>
                     </div>
                     <div className="pt-4 border-t border-gray-800">
-                      <h4 className="font-bold text-white mb-3">Key Metrics</h4>
+                      <h4 className="font-bold text-white mb-3">Kluczowe Wskaźniki</h4>
                       <div className="flex flex-wrap gap-2">
                         {analysis.metrics.map((metric, idx) => (
                           <span
@@ -650,7 +649,7 @@ export default function SensorArrayPage() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                   <div>
                     <h3 className="text-2xl font-bold text-white mb-6">
-                      InfluxDB 3 Core Integration
+                      Integracja InfluxDB 3 Core
                     </h3>
                     <div className="space-y-4 mb-8">
                       <div className="flex items-start gap-3">
@@ -658,8 +657,8 @@ export default function SensorArrayPage() {
                           <IconDatabase className="h-5 w-5 text-purple-400" />
                         </div>
                         <p className="text-gray-300">
-                          Time-series data storage optimized for environmental
-                          metrics
+                          Przechowywanie danych szeregów czasowych zoptymalizowane pod kątem wskaźników środowiskowych
+
                         </p>
                       </div>
                       <div className="flex items-start gap-3">
@@ -667,8 +666,7 @@ export default function SensorArrayPage() {
                           <IconChartLine className="h-5 w-5 text-blue-400" />
                         </div>
                         <p className="text-gray-300">
-                          Fast query performance for real-time data
-                          visualization
+                          Szybkie wykonywanie zapytań w celu wizualizacji danych w czasie rzeczywistym
                         </p>
                       </div>
                       <div className="flex items-start gap-3">
@@ -676,7 +674,7 @@ export default function SensorArrayPage() {
                           <IconChartAreaLine className="h-5 w-5 text-green-400" />
                         </div>
                         <p className="text-gray-300">
-                          Historical data analysis and trend identification
+                          Analiza danych historycznych i identyfikacja trendów
                         </p>
                       </div>
                     </div>
@@ -687,39 +685,38 @@ export default function SensorArrayPage() {
                       <div className="aspect-video bg-linear-to-br from-purple-900/20 to-blue-900/20 rounded-lg flex items-center justify-center mb-4">
                         <div className="text-center">
                           <IconDatabase className="h-16 w-16 text-purple-400 mx-auto mb-4" />
-                          <p className="text-gray-400">Real-time Data Stream</p>
+                          <p className="text-gray-400">Strumień Danych w Czasie Rzeczywistym</p>
                         </div>
                       </div>
                       <div className="grid grid-cols-2 gap-4">
                         <div className="text-center p-3 bg-gray-800/30 rounded-lg">
                           <div className="text-xl font-bold text-cyan-400 mb-1">
-                            Real-time
+                            Czas Rzeczywisty
                           </div>
                           <div className="text-xs text-gray-400">
-                            Data Ingestion
+                            Pobieranie Danych
                           </div>
                         </div>
                         <div className="text-center p-3 bg-gray-800/30 rounded-lg">
                           <div className="text-xl font-bold text-green-400 mb-1">
-                            Fast Queries
+                            Szybkie Zapytania
                           </div>
                           <div className="text-xs text-gray-400">
-                            Performance
+                            Wydajność
                           </div>
                         </div>
                         <div className="text-center p-3 bg-gray-800/30 rounded-lg">
                           <div className="text-xl font-bold text-blue-400 mb-1">
-                            Historical
+                            Historycznie
                           </div>
                           <div className="text-xs text-gray-400">
-                            Data Storage
-                          </div>
+Przechowywanie Danych                          </div>
                         </div>
                         <div className="text-center p-3 bg-gray-800/30 rounded-lg">
                           <div className="text-xl font-bold text-purple-400 mb-1">
-                            Time-series
+                            Szeregi Czasowe
                           </div>
-                          <div className="text-xs text-gray-400">Optimized</div>
+                          <div className="text-xs text-gray-400">Zoptymalizowane</div>
                         </div>
                       </div>
                     </div>
@@ -736,10 +733,10 @@ export default function SensorArrayPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Future <span className="text-yellow-400">Development</span>
+              Rozwój <span className="text-yellow-400">w Przyszłości</span>
             </h2>
             <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-              Planned enhancements and expansion possibilities for the system
+              Planowane ulepszenia i możliwości rozbudowy systemu
             </p>
           </div>
 
@@ -748,7 +745,7 @@ export default function SensorArrayPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                   <h3 className="text-2xl font-bold text-white mb-6">
-                    Upcoming Features
+                    Nadchodzące Funkcje
                   </h3>
                   <ul className="space-y-3">
                     {futureFeatures.map((feature, index) => (
@@ -769,10 +766,9 @@ export default function SensorArrayPage() {
                   <div className="text-center p-6 bg-linear-to-br from-yellow-500/10 to-orange-500/10 rounded-2xl border border-yellow-800">
                     <IconAlertCircle className="h-16 w-16 text-yellow-400 mx-auto mb-4" />
                     <h4 className="text-xl font-bold text-white mb-2">
-                      System Expansion
-                    </h4>
+Ekspansja Systemu                    </h4>
                     <p className="text-gray-400">
-                      Scalable architecture for multiple nodes and integrations
+                      Skalowalna architektura dla wielu węzłów i integracji
                     </p>
                   </div>
                 </div>
@@ -787,10 +783,10 @@ export default function SensorArrayPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Development <span className="text-cyan-400">Team</span>
+              <span className="text-cyan-400">Zespół</span> Deweloperski
             </h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              The team behind the Environmental Data Collection System
+              Zespół odpowiedzialny za system gromadzenia danych środowiskowych
             </p>
           </div>
 
@@ -801,14 +797,14 @@ export default function SensorArrayPage() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-white mb-4">
-                Project Achievement
+                Osiągnięcia Projektu
               </h3>
               <p className="text-gray-300 leading-relaxed">
-                Successfully developed a complete IoT ecosystem for
-                environmental monitoring that operates independently of internet
-                connectivity. The system demonstrates practical application of
-                wireless sensor networks, time-series databases, and real-time
-                web visualization in a university research context.
+                Opracowano kompletny ekosystem IoT do
+                monitorowania środowiska, który działa niezależnie od połączenia internetowego
+                . System ten stanowi praktyczne zastosowanie
+                bezprzewodowych sieci czujników, baz danych szeregów czasowych oraz wizualizacji internetowej w czasie rzeczywistym
+                w kontekście badań uniwersyteckich.
               </p>
             </div>
           </div>
