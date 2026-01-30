@@ -33,7 +33,7 @@ export default function SensorArrayPage() {
     {
       id: 1,
       name: "BME680",
-      description: "Temperature, humidity, pressure & air quality",
+      description: "Temperatura, wilgotność, ciśnienie i jakość powietrza",
       icon: <IconCloud className="h-6 w-6 text-cyan-500" />,
       color: "from-cyan-500 to-blue-500",
       features: ["Temperature", "Humidity", "Pressure", "Air Quality"],
@@ -41,7 +41,7 @@ export default function SensorArrayPage() {
     {
       id: 2,
       name: "DHT11",
-      description: "Temperature and humidity sensor",
+      description: "Czujnik temperatury i wilgotności",
       icon: <IconTemperature className="h-6 w-6 text-red-500" />,
       color: "from-red-500 to-orange-500",
       features: ["Temperature", "Humidity"],
@@ -49,7 +49,7 @@ export default function SensorArrayPage() {
     {
       id: 3,
       name: "Soil Moisture",
-      description: "Ground humidity level measurement",
+      description: "Pomiar poziomu wilgotności gruntu",
       icon: <IconDroplets className="h-6 w-6 text-green-500" />,
       color: "from-green-500 to-emerald-500",
       features: ["Soil Humidity", "Plant Health"],
@@ -120,74 +120,74 @@ export default function SensorArrayPage() {
     {
       id: 1,
       name: "Real-time Data Collection",
-      content: "Continuous environmental monitoring with multiple sensor types",
+      content: "Ciągłe monitorowanie środowiska za pomocą wielu rodzajów czujników",
     },
     {
       id: 2,
       name: "Local Network Operation",
       content:
-        "Functions without internet access using Wi-Fi LAN communication",
+        "Działa bez dostępu do Internetu, korzystając z komunikacji Wi-Fi LAN",
     },
     {
       id: 3,
       name: "Time-series Database",
       content:
-        "InfluxDB 3 Core for efficient historical data storage and queries",
+        "InfluxDB 3 Core do wydajnego przechowywania danych historycznych i zapytań",
     },
     {
       id: 4,
       name: "Browser Visualization",
-      content: "Real-time data visualization through web interface",
+      content: "Wizualizacja danych w czasie rzeczywistym za pośrednictwem interfejsu internetowego",
     },
     {
       id: 5,
       name: "UDP Broadcast",
       content:
-        "Wi-Fi communication without requiring server IP address knowledge",
+        "Komunikacja Wi-Fi bez konieczności znajomości adresu IP serwera",
     },
     {
       id: 6,
       name: "Wireless Operation",
       content:
-        "ESP8266 operates independently without wired connections to server",
+        "ESP8266 działa niezależnie, bez przewodowych połączeń z serwerem",
     },
   ];
 
   const dataAnalysis = [
     {
       title: "Temperature & Humidity Trends",
-      description: "Track environmental changes over time for climate analysis",
+      description: "Śledź zmiany środowiskowe w czasie w celu analizy klimatu",
       icon: <IconChartLine className="h-8 w-8" />,
       metrics: ["Daily patterns", "Seasonal changes", "Anomaly detection"],
     },
     {
       title: "Air Quality Assessment",
       description:
-        "Monitor indoor air quality for health and comfort optimization",
+        "Monitoruj jakość powietrza w pomieszczeniach, aby zoptymalizować zdrowie i komfort",
       icon: <IconCloud className="h-8 w-8" />,
       metrics: ["VOC levels", "Pressure changes", "Humidity balance"],
     },
     {
       title: "Plant Condition Monitoring",
-      description: "Track soil moisture for optimal plant growth conditions",
+      description: "Śledź wilgotność gleby, aby zapewnić optymalne warunki wzrostu roślin",
       icon: <IconDroplets className="h-8 w-8" />,
       metrics: ["Soil humidity", "Temperature range", "Watering needs"],
     },
     {
       title: "Anomaly Detection",
-      description: "Identify unusual environmental patterns and trigger alerts",
+      description: "Rozpoznawaj nietypowe wzorce środowiskowe i uruchamiaj alerty",
       icon: <IconAlertCircle className="h-8 w-8" />,
       metrics: ["Threshold alerts", "Pattern deviation", "Event logging"],
     },
   ];
 
   const futureFeatures = [
-    "Threshold-based alerts and notifications",
-    "Device control integration",
-    "Grafana dashboard integration",
-    "Support for multiple measurement nodes",
-    "Advanced data analytics",
-    "Mobile application",
+    "Alerty i powiadomienia oparte na progach",
+    "Integracja kontroli urządzeń",
+    "Integracja pulpitu nawigacyjnego Grafana",
+    "Obsługa wielu węzłów pomiarowych",
+    "Zaawansowana analityka danych",
+    "Aplikacja mobilna",
   ];
 
   if (!isClient) return null;

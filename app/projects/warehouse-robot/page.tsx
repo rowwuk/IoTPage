@@ -31,30 +31,30 @@ export default function WarehouseRobotPage() {
   const systemFeatures = [
     {
       id: 1,
-      name: "Autonomous Navigation",
+      name: "Nawigacja Autonomiczna",
       description:
-        "Self-guided movement in flat warehouse spaces using advanced pathfinding",
+        "Samodzielne poruszanie się po płaskich powierzchniach magazynowych z wykorzystaniem zaawansowanego systemu wyznaczania tras",
       icon: <IconRoute className="h-8 w-8 text-green-500" />,
     },
     {
       id: 2,
-      name: "Real-time Mapping",
+      name: "Mapowanie w Czasie Rzeczywistym",
       description:
-        "Continuous environment mapping with 5cm resolution using SLAM algorithms",
+        "Ciągłe mapowanie otoczenia z rozdzielczością 5 cm przy użyciu algorytmów SLAM",
       icon: <IconMap className="h-8 w-8 text-blue-500" />,
     },
     {
       id: 3,
-      name: "Unreal Engine Visualization",
+      name: "Wizualizacja w Unreal Engine",
       description:
-        "3D simulation and visualization of robot movement and warehouse environment",
+        "Symulacja 3D i wizualizacja ruchu robota oraz środowiska magazynowego",
       icon: <IconEngine className="h-8 w-8 text-purple-500" />,
     },
     {
       id: 4,
-      name: "LiDAR Scanning",
+      name: "Skanowanie LiDAR",
       description:
-        "Precise environment scanning using Delta 2A LiDAR for accurate mapping",
+        "Precyzyjne skanowanie otoczenia za pomocą systemu Delta 2A LiDAR w celu dokładnego mapowania",
       icon: <IconRadar2 className="h-8 w-8 text-yellow-500" />,
     },
   ];
@@ -77,47 +77,47 @@ export default function WarehouseRobotPage() {
   const technologyStack = [
     {
       name: "ESP32-S3",
-      description: "Main microcontroller",
+      description: "Główny mikrokontroler",
       color: "from-green-500 to-emerald-500",
     },
     {
       name: "SLAM Algorithms",
-      description: "Simultaneous Localization and Mapping",
+      description: "Jednoczesna lokalizacja i mapowanie",
       color: "from-blue-500 to-cyan-500",
     },
     {
       name: "ROS",
-      description: "Robot Operating System",
+      description: "System operacyjny robota",
       color: "from-purple-500 to-pink-500",
     },
     {
       name: "Dijkstra",
-      description: "Optimal pathfinding algorithm",
+      description: "Algorytm optymalnego wyznaczania trasy",
       color: "from-orange-500 to-red-500",
     },
     {
       name: "Unreal Engine 5",
-      description: "3D visualization engine",
+      description: "Silnik wizualizacji 3D",
       color: "from-violet-500 to-purple-500",
     },
     {
       name: "Blender",
-      description: "3D modeling software",
+      description: "Program do modelowania 3D",
       color: "from-yellow-500 to-orange-500",
     },
     {
       name: "WebSocket",
-      description: "Real-time communication protocol",
+      description: "Protokół komunikacji w czasie rzeczywistym",
       color: "from-cyan-500 to-blue-500",
     },
     {
       name: "Python",
-      description: "Server-side language",
+      description: "Język po stronie serwera",
       color: "from-emerald-500 to-green-500",
     },
     {
       name: "C++/Arduino",
-      description: "Microcontroller programming",
+      description: "Programowanie mikrokontrolerów",
       color: "from-pink-500 to-rose-500",
     },
   ];
@@ -127,35 +127,35 @@ export default function WarehouseRobotPage() {
       id: 1,
       name: "Environment Scanning",
       content:
-        "LiDAR scans warehouse environment, creating initial point cloud data",
+        "LiDAR skanuje środowisko magazynowe, tworząc wstępne dane chmury punktów",
     },
     {
       id: 2,
       name: "Map Generation",
       content:
-        "Data processed into 5cm resolution grid: 0=free, 1=occupied, 3=undiscovered",
+        "Dane przetworzone do siatki o rozdzielczości 5 cm: 0 = wolne, 1 = zajęte, 3 = nieodkryte",
     },
     {
       id: 3,
       name: "Path Planning",
       content:
-        "Dijkstra algorithm calculates optimal routes through free spaces",
+        "Algorytm Dijkstry oblicza optymalne trasy przez wolne przestrzenie",
     },
     {
       id: 4,
       name: "Autonomous Navigation",
-      content: "Stepper motors execute precise movements along planned routes",
+      content: "Silniki krokowe wykonują precyzyjne ruchy wzdłuż zaplanowanych tras",
     },
     {
       id: 5,
       name: "Real-time Updates",
-      content: "Continuous SLAM updates map as robot explores new areas",
+      content: "Ciągłe aktualizacje SLAM tworzą mapę w miarę jak robot bada nowe obszary",
     },
     {
       id: 6,
       name: "Visualization",
       content:
-        "Unreal Engine displays real-time robot movement and warehouse simulation",
+        "Silnik Unreal Engine wyświetla ruchy robotów i symulację magazynu w czasie rzeczywistym",
     },
   ];
 
