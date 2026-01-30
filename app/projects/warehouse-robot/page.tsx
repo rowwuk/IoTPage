@@ -190,14 +190,14 @@ export default function WarehouseRobotPage() {
             {/* Badge */}
             <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6">
               <span className="text-sm font-medium text-white">
-                IoT Robotics Visualization Project
+                Projekt Wizualizacji i Robotyki IoT
               </span>
             </div>
 
             {/* Main Title */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
               <span className="bg-linear-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
-                Autonomous Warehouse Robot
+                Autonomiczny Robot Magazynowy
               </span>
             </h1>
 
@@ -205,8 +205,9 @@ export default function WarehouseRobotPage() {
 
             {/* Subtitle */}
             <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed">
-              Intelligent robotic system for autonomous navigation, real-time
-              mapping, and 3D visualization in warehouse environments
+              Inteligentny system robotyczny do autonomicznej nawigacji,
+              mapowania w czasie rzeczywistym i wizualizacji 3D w środowiskach
+              magazynowych
             </p>
 
             {/* Project Tags */}
@@ -230,19 +231,19 @@ export default function WarehouseRobotPage() {
 
             {/* CTA Buttons */}
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="#simulation">
+              <Link href="#demo">
                 <HoverBorderGradient
                   containerClassName="rounded-full w-full"
                   as="button"
                   className="bg-black text-white flex items-center space-x-2 px-8 py-4 text-lg"
                 >
-                  <span>View 3D Simulation</span>
+                  <span>Zobacz Prezentację</span>
                   <IconArrowRight className="h-5 w-5" />
                 </HoverBorderGradient>
               </Link>
               <Link href="#architecture">
                 <button className="px-10 py-4 rounded-full w-full bg-linear-to-b from-cyan-600 to-blue-600 text-white font-medium text-lg hover:shadow-2xl hover:shadow-cyan-500/30 transition-all duration-300">
-                  System Architecture
+                  Architektura Systemu
                 </button>
               </Link>
             </div>
@@ -255,12 +256,13 @@ export default function WarehouseRobotPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Project <span className="text-cyan-400">Overview</span>
+              <span className="text-green-400">Zarys Ogólny</span> Projektu
             </h2>
             <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-              An autonomous robotic system designed for warehouse environments,
-              featuring real-time mapping, path planning, and Unreal Engine
-              visualization
+              Autonomiczny system robotyczny przeznaczony do środowisk
+              magazynowych, wyposażony w funkcje mapowania w czasie
+              rzeczywistym, planowania trasy oraz wizualizacji w silniku Unreal
+              Engine.
             </p>
           </div>
 
@@ -268,7 +270,7 @@ export default function WarehouseRobotPage() {
             <div className="relative">
               <div className="relative bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8">
                 <h3 className="text-2xl font-bold text-white mb-6">
-                  Core Capabilities
+                  Podstawowe Możliwości
                 </h3>
                 <div className="space-y-6">
                   {systemFeatures.map((feature) => (
@@ -294,13 +296,15 @@ export default function WarehouseRobotPage() {
 
             <div>
               <h3 className="text-2xl font-bold text-white mb-6">
-                System Specifications
+                Specyfikacje Systemu
               </h3>
               <div className="space-y-4">
                 <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-5">
                   <div className="flex items-center gap-3 mb-3">
                     <IconGauge className="h-6 w-6 text-green-400" />
-                    <h4 className="font-bold text-white">Performance Limits</h4>
+                    <h4 className="font-bold text-white">
+                      Ograniczenia Wydajności
+                    </h4>
                   </div>
                   <ul className="space-y-2 text-gray-300">
                     <li className="flex justify-between">
@@ -325,9 +329,7 @@ export default function WarehouseRobotPage() {
                 <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-5">
                   <div className="flex items-center gap-3 mb-3">
                     <IconNetwork className="h-6 w-6 text-blue-400" />
-                    <h4 className="font-bold text-white">
-                      Communication Stack
-                    </h4>
+                    <h4 className="font-bold text-white">Stos Komunikacyjny</h4>
                   </div>
                   <ul className="space-y-2 text-gray-300">
                     <li>WebSocket for real-time data transfer</li>
@@ -350,7 +352,7 @@ export default function WarehouseRobotPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              System <span className="text-blue-400">Architecture</span>
+              <span className="text-blue-400">Architektura</span> Systemu
             </h2>
           </div>
 
@@ -598,129 +600,6 @@ export default function WarehouseRobotPage() {
         </div>
       </section>
 
-      {/* Simulation Section */}
-      <section
-        id="simulation"
-        className="py-20 bg-linear-to-b from-transparent to-gray-900/30"
-      >
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              3D Simulation &{" "}
-              <span className="text-cyan-400">Visualization</span>
-            </h2>
-            <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-              Real-time visualization of warehouse environment and robot
-              navigation in Unreal Engine 5
-            </p>
-          </div>
-
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="relative bg-gray-900/50 border border-gray-800 rounded-2xl p-8">
-                  <h3 className="text-2xl font-bold text-white mb-6">
-                    Unreal Engine Integration
-                  </h3>
-                  <ul className="space-y-4 mb-8">
-                    <li className="flex items-start gap-3">
-                      <div className="p-2 bg-cyan-500/20 rounded-lg mt-1">
-                        <Icon3dCubeSphere className="h-5 w-5 text-cyan-400" />
-                      </div>
-                      <p className="text-gray-300">
-                        High-fidelity 3D warehouse environment visualization
-                      </p>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="p-2 bg-purple-500/20 rounded-lg mt-1">
-                        <IconMap className="h-5 w-5 text-purple-400" />
-                      </div>
-                      <p className="text-gray-300">
-                        Real-time mapping data overlay on 3D models
-                      </p>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="p-2 bg-green-500/20 rounded-lg mt-1">
-                        <IconRoute className="h-5 w-5 text-green-400" />
-                      </div>
-                      <p className="text-gray-300">
-                        Path planning visualization with Dijkstra algorithm
-                      </p>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="p-2 bg-blue-500/20 rounded-lg mt-1">
-                        <IconRadar2 className="h-5 w-5 text-blue-400" />
-                      </div>
-                      <p className="text-gray-300">
-                        LiDAR scan simulation and point cloud rendering
-                      </p>
-                    </li>
-                  </ul>
-
-                  <div className="bg-gray-800/50 rounded-xl p-4">
-                    <h4 className="font-bold text-white mb-2">
-                      Map Data Structure
-                    </h4>
-                    <div className="text-sm text-gray-400 space-y-1">
-                      <p>• Grid-based representation with 5×5 cm resolution</p>
-                      <p>• 0 = Free space (navigable)</p>
-                      <p>• 1 = Occupied space (obstacle)</p>
-                      <p>• 3 = Undiscovered space</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="relative">
-                <div className="relative bg-linear-to-br from-gray-900 to-black border border-gray-800 rounded-2xl p-8 overflow-hidden">
-                  <div className="aspect-video bg-l`inear-to-br from-cyan-900/20 to-blue-900/20 rounded-xl flex items-center justify-center mb-6">
-                    <div className="text-center">
-                      <Icon3dCubeSphere className="h-20 w-20 text-cyan-400 mx-auto mb-4" />
-                      <p className="text-gray-400">
-                        Unreal Engine 5 Simulation
-                      </p>
-                      <p className="text-sm text-gray-500 mt-2">
-                        Real-time robot visualization
-                      </p>
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="text-center p-4 bg-gray-800/30 rounded-lg">
-                      <div className="text-2xl font-bold text-cyan-400 mb-1">
-                        30×30m
-                      </div>
-                      <div className="text-sm text-gray-400">
-                        Workspace Size
-                      </div>
-                    </div>
-                    <div className="text-center p-4 bg-gray-800/30 rounded-lg">
-                      <div className="text-2xl font-bold text-green-400 mb-1">
-                        5cm
-                      </div>
-                      <div className="text-sm text-gray-400">
-                        Grid Resolution
-                      </div>
-                    </div>
-                    <div className="text-center p-4 bg-gray-800/30 rounded-lg">
-                      <div className="text-2xl font-bold text-blue-400 mb-1">
-                        1 km/h
-                      </div>
-                      <div className="text-sm text-gray-400">Max Speed</div>
-                    </div>
-                    <div className="text-center p-4 bg-gray-800/30 rounded-lg">
-                      <div className="text-2xl font-bold text-purple-400 mb-1">
-                        Real-time
-                      </div>
-                      <div className="text-sm text-gray-400">Visualization</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Team Section */}
       <section id="specs" className="py-20 relative">
         <div className="container mx-auto px-4">
@@ -776,35 +655,101 @@ export default function WarehouseRobotPage() {
         </div>
       </section>
 
+      {/* Demo Section */}
+      <section id="demo" className="py-20 relative">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="relative bg-linear-to-br from-gray-900 to-black border border-gray-800 rounded-2xl p-8 md:p-12 overflow-hidden">
+              <div className="relative z-10">
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">
+                  Oryginalna Prezentacja
+                </h2>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-4">
+                      Poznaj System
+                    </h3>
+                    <ul className="space-y-3 mb-8">
+                      <li className="flex items-center gap-3 text-gray-300">
+                        <div className="h-2 w-2 bg-green-500 rounded-full"></div>
+                        Nawigacja autonomiczna
+                      </li>
+                      <li className="flex items-center gap-3 text-gray-300">
+                        <div className="h-2 w-2 bg-blue-500 rounded-full"></div>
+                        Mapowanie w czasie rzeczywistym
+                      </li>
+                      <li className="flex items-center gap-3 text-gray-300">
+                        <div className="h-2 w-2 bg-purple-500 rounded-full"></div>
+                        Wizualizacja w silniku Unreal Engine
+                      </li>
+                      <li className="flex items-center gap-3 text-gray-300">
+                        <div className="h-2 w-2 bg-cyan-500 rounded-full"></div>
+                        Skanowanie LiDAR
+                      </li>
+                    </ul>
+                    <Link href="/">
+                      <button className="w-full py-3 px-6 bg-linear-to-r from-green-600 to-blue-600 rounded-xl text-white font-medium hover:opacity-90 transition-opacity">
+                        Zobacz Inne Projekty
+                      </button>
+                    </Link>
+                  </div>
+                  <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-6">
+                    <a href="../presentations/warehouse-robot.pdf">
+                      <div
+                        className="aspect-video bg-gray-800/50 rounded-lg flex items-center justify-center mb-4"
+                        style={{
+                          backgroundImage: `linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+                            url('../presentations/warehouse-robot-thumb.jpg')`,
+                          backgroundSize: `cover`,
+                        }}
+                      >
+                        <div className="text-center">
+                          <p className="text-white-400">Zobacz Prezentację</p>
+                        </div>
+                      </div>
+                    </a>
+                    <p className="text-gray-400 text-sm text-center">
+                      Autonomiczny robot magazynowy
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="py-12 border-t border-gray-800">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-6 md:mb-0">
               <h3 className="text-xl font-bold text-white mb-2">
-                Autonomous Warehouse Robot
+                Autonomiczny Robot Magazynowy
               </h3>
-              <p className="text-gray-500">University Robotics Project</p>
+              <p className="text-gray-500">
+                Projekt Wizualizacji i Robotyki IoT
+              </p>
             </div>
             <div className="flex gap-6">
               <Link
                 href="/"
                 className="text-gray-400 hover:text-white transition-colors"
               >
-                ← Back to Home
+                ← Powrót do Strony Głównej
               </Link>
               <Link
                 href="/projects/sensor-array"
                 className="text-gray-400 hover:text-white transition-colors"
               >
-                Sensor Array Project →
+                Sensor Array →
               </Link>
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-gray-900 text-center">
             <p className="text-gray-600 text-sm">
-              © {new Date().getFullYear()} University Robotics Lab. Advanced
-              autonomous navigation system for warehouse environments.
+              © {new Date().getFullYear()} Jarosław Wojciuk, Aplikacje Internetu
+              Rzeczy
             </p>
           </div>
         </div>

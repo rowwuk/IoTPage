@@ -221,14 +221,14 @@ export default function SensorArrayPage() {
             {/* Badge */}
             <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6">
               <span className="text-sm font-medium text-white">
-                IoT Sensor Visualization Project
+                Projekt Wizualizacji Czujników IoT
               </span>
             </div>
 
             {/* Main Title */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
               <span className="bg-linear-to-r from-cyan-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
-                Environmental Data Collection System
+                System Zbierania Danych Środowiskowych
               </span>
             </h1>
 
@@ -236,8 +236,9 @@ export default function SensorArrayPage() {
 
             {/* Subtitle */}
             <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed">
-              Real-time IoT system for environmental monitoring, data
-              collection, and visualization without internet dependency
+              System IoT działający w czasie rzeczywistym do monitorowania
+              środowiska, gromadzenia danych i wizualizacji bez konieczności
+              korzystania z internetu
             </p>
 
             {/* Project Tags */}
@@ -261,19 +262,19 @@ export default function SensorArrayPage() {
 
             {/* CTA Buttons */}
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="#architecture">
+              <Link href="#demo">
                 <HoverBorderGradient
                   containerClassName="rounded-full w-full"
                   as="button"
                   className="bg-black text-white flex items-center space-x-2 px-8 py-4 text-lg"
                 >
-                  <span>System Architecture</span>
+                  <span>Zobacz Prezentację</span>
                   <IconArrowRight className="h-5 w-5" />
                 </HoverBorderGradient>
               </Link>
-              <Link href="#analysis">
+              <Link href="#architecture">
                 <button className="px-10 py-4 rounded-full w-full bg-linear-to-b from-cyan-600 to-purple-600 text-white font-medium text-lg hover:shadow-2xl hover:shadow-cyan-500/30 transition-all duration-300">
-                  Data Analysis
+                  Architektura Systemu
                 </button>
               </Link>
             </div>
@@ -286,11 +287,11 @@ export default function SensorArrayPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Project <span className="text-cyan-400">Overview</span>
+              <span className="text-green-400">Zarys Ogólny</span> Projektu
             </h2>
             <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-              A complete IoT system for collecting, transmitting, storing, and
-              visualizing environmental data in real-time
+              Kompletny system IoT do gromadzenia, przesyłania, przechowywania i
+              wizualizacji danych środowiskowych w czasie rzeczywistym
             </p>
           </div>
 
@@ -299,7 +300,7 @@ export default function SensorArrayPage() {
               <div className="relative">
                 <div className="relative bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8">
                   <h3 className="text-2xl font-bold text-white mb-6">
-                    System Objectives
+                    Cele Systemu
                   </h3>
                   <div className="space-y-4">
                     <div className="flex items-start gap-3 p-4 rounded-xl hover:bg-gray-800/50 transition-colors">
@@ -360,7 +361,7 @@ export default function SensorArrayPage() {
 
               <div>
                 <h3 className="text-2xl font-bold text-white mb-6">
-                  Technology Stack
+                  Stos Technologiczny
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {technologyStack.map((tech, index) => (
@@ -405,11 +406,11 @@ export default function SensorArrayPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              System <span className="text-purple-400">Architecture</span>
+              <span className="text-purple-400">Architektura</span> Systemu
             </h2>
             <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-              Wireless IoT network using UDP broadcast for seamless data
-              transmission
+              Bezprzewodowa sieć IoT wykorzystująca transmisję UDP do płynnego
+              przesyłania danych
             </p>
           </div>
 
@@ -814,36 +815,101 @@ export default function SensorArrayPage() {
         </div>
       </section>
 
+      {/* Demo Section */}
+      <section id="demo" className="py-20 relative">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="relative bg-linear-to-br from-gray-900 to-black border border-gray-800 rounded-2xl p-8 md:p-12 overflow-hidden">
+              <div className="relative z-10">
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">
+                  Oryginalna Prezentacja
+                </h2>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-4">
+                      Poznaj System
+                    </h3>
+                    <ul className="space-y-3 mb-8">
+                      <li className="flex items-center gap-3 text-gray-300">
+                        <div className="h-2 w-2 bg-green-500 rounded-full"></div>
+                        Gromadzenie danych dotyczących środowiska
+                      </li>
+                      <li className="flex items-center gap-3 text-gray-300">
+                        <div className="h-2 w-2 bg-blue-500 rounded-full"></div>
+                        Transmisja w sieci lokalnej
+                      </li>
+                      <li className="flex items-center gap-3 text-gray-300">
+                        <div className="h-2 w-2 bg-purple-500 rounded-full"></div>
+                        Baza danych szeregów czasowych
+                      </li>
+                      <li className="flex items-center gap-3 text-gray-300">
+                        <div className="h-2 w-2 bg-cyan-500 rounded-full"></div>
+                        Wizualizacja przeglądarki
+                      </li>
+                    </ul>
+                    <Link href="/">
+                      <button className="w-full py-3 px-6 bg-linear-to-r from-green-600 to-blue-600 rounded-xl text-white font-medium hover:opacity-90 transition-opacity">
+                        Zobacz Inne Projekty
+                      </button>
+                    </Link>
+                  </div>
+                  <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-6">
+                    <a href="../presentations/sensor-array.pdf">
+                      <div
+                        className="aspect-video bg-gray-800/50 rounded-lg flex items-center justify-center mb-4"
+                        style={{
+                          backgroundImage: `linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+                            url('../presentations/sensor-array-thumb.jpg')`,
+                          backgroundSize: `cover`,
+                        }}
+                      >
+                        <div className="text-center">
+                          <p className="text-white-400">Zobacz Prezentację</p>
+                        </div>
+                      </div>
+                    </a>
+                    <p className="text-gray-400 text-sm text-center">
+                      Prezentacja aplikacji do zbierania danych
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="py-12 border-t border-gray-800">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-6 md:mb-0">
               <h3 className="text-xl font-bold text-white mb-2">
-                Environmental Data Collection System
+                System Zbierania Danych Środowiskowych
               </h3>
-              <p className="text-gray-500">University IoT Research Project</p>
+              <p className="text-gray-500">
+                Projekt Wizualizacji Czujników IoT
+              </p>
             </div>
             <div className="flex gap-6">
               <Link
                 href="/"
                 className="text-gray-400 hover:text-white transition-colors"
               >
-                ← Back to Home
+                ← Powrót do Strony Głównej
               </Link>
               <Link
-                href="/projects/warehouse-robot"
+                href="/projects/website"
                 className="text-gray-400 hover:text-white transition-colors"
               >
-                Warehouse Robot →
+                Website →
               </Link>
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-gray-900 text-center">
             <p className="text-gray-600 text-sm">
-              © {new Date().getFullYear()} University IoT Research Lab.
-              Real-time environmental monitoring system using ESP8266, InfluxDB,
-              and Flask.
+              © {new Date().getFullYear()} Jarosław Wojciuk, Aplikacje Internetu
+              Rzeczy
             </p>
           </div>
         </div>

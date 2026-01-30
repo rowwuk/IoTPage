@@ -1,4 +1,3 @@
-// app/projects/website/page.tsx
 "use client";
 
 import { BackgroundBeams } from "@/components/ui/background-beams";
@@ -35,21 +34,21 @@ export default function WebsiteProjectPage() {
   const developmentTeam = [
     {
       id: 1,
-      name: "Główny Deweloper",
+      name: "Jarosław Wojciuk",
       designation: "Full Stack & UI/UX",
-      image: "/team/dev1.jpg",
+      image: "../user.jpg",
     },
     {
       id: 2,
-      name: "AI Assistant",
+      name: "DeepSeek",
       designation: "Generowanie kodu i struktur",
-      image: "/team/ai.jpg",
+      image: "../ai.jpg",
     },
   ];
 
   const technologyStack = [
     {
-      name: "Next.js 14",
+      name: "Next.js 16",
       description: "React framework z App Router",
       color: "from-gray-500 to-black",
     },
@@ -89,8 +88,8 @@ export default function WebsiteProjectPage() {
       color: "from-gray-600 to-gray-800",
     },
     {
-      name: "Vercel AI SDK",
-      description: "Integracja z AI (OpenAI)",
+      name: "GitHub Actions",
+      description: "Skrypt dla deploymentu na GitHub Pages",
       color: "from-violet-500 to-purple-500",
     },
   ];
@@ -148,14 +147,12 @@ export default function WebsiteProjectPage() {
     {
       id: 4,
       name: "Optymalizacja",
-      content:
-        "Sugestie optymalizacji wydajności, SEO i najlepszych praktyk React",
+      content: "Optymalizacji wydajności, SEO i najlepszych praktyk React",
     },
     {
       id: 5,
       name: "Testowanie i Debugowanie",
-      content:
-        "Pomoc w identyfikacji i naprawie błędów, testowanie responsywności",
+      content: "Identyfikacja i naprawa błędów, testowanie responsywności",
     },
     {
       id: 6,
@@ -183,7 +180,7 @@ export default function WebsiteProjectPage() {
     {
       title: "Błyskawiczne ładowanie",
       description:
-        "Optymalizacja wydajności dzięki statycznej generacji w Next.js 14",
+        "Optymalizacja wydajności dzięki statycznej generacji w Next.js 16",
       icon: <IconRocket className="h-10 w-10" />,
       color: "from-orange-500 to-red-500",
     },
@@ -249,7 +246,7 @@ export default function WebsiteProjectPage() {
             {/* Project Tags */}
             <div className="flex flex-wrap justify-center gap-3 mb-12">
               {[
-                "Next.js 14",
+                "Next.js 16",
                 "TypeScript",
                 "AI Development",
                 "GitHub Pages",
@@ -366,7 +363,7 @@ export default function WebsiteProjectPage() {
                     </h4>
                   </div>
                   <ul className="space-y-2 text-gray-300">
-                    <li>Next.js 14 z App Router</li>
+                    <li>Next.js 16 z App Router</li>
                     <li>TypeScript dla type safety</li>
                     <li>Tailwind CSS dla stylowania</li>
                     <li>Framer Motion dla animacji</li>
@@ -407,7 +404,7 @@ export default function WebsiteProjectPage() {
                       <h3 className="text-xl font-bold text-white">
                         Frontend Layer
                       </h3>
-                      <p className="text-gray-400 mt-1">Next.js 14</p>
+                      <p className="text-gray-400 mt-1">Next.js 16</p>
                     </div>
                     <ul className="space-y-3 text-gray-300">
                       <li className="flex items-center gap-2">
@@ -459,7 +456,7 @@ export default function WebsiteProjectPage() {
                         <div className="h-2 w-2 bg-blue-500 rounded-full"></div>
                         Framer Motion
                       </li>
-                      <li className="flex items-center gap=2">
+                      <li className="flex items-center gap-2">
                         <div className="h-2 w-2 bg-blue-500 rounded-full"></div>
                         Tabler Icons
                       </li>
@@ -516,7 +513,7 @@ export default function WebsiteProjectPage() {
               {/* AI Development Workflow */}
               <div>
                 <h3 className="text-2xl font-bold text-white mb-8 text-center">
-                  Proces Rozwoju z AI
+                  Proces Rozwoju
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {aiWorkflowSteps.map((step, index) => (
@@ -709,15 +706,17 @@ export default function WebsiteProjectPage() {
 
               <div className="relative">
                 <div className="relative bg-linear-to-br from-gray-900 to-black border border-gray-800 rounded-2xl p-8 overflow-hidden">
-                  <div className="aspect-video bg-linear-to-br from-green-900/20 to-emerald-900/20 rounded-xl flex items-center justify-center mb-6">
-                    <div className="text-center">
-                      <IconBrandGithub className="h-20 w-20 text-green-400 mx-auto mb-4" />
-                      <p className="text-gray-400">GitHub Repository</p>
-                      <p className="text-sm text-gray-500 mt-2">
-                        Publiczne repozytorium kodu
-                      </p>
+                  <a href="https://github.com/rowwuk/IoTPage">
+                    <div className="aspect-video bg-linear-to-br from-green-900/20 to-emerald-900/20 rounded-xl flex items-center justify-center mb-6">
+                      <div className="text-center">
+                        <IconBrandGithub className="h-20 w-20 text-green-400 mx-auto mb-4" />
+                        <p className="text-gray-400">GitHub Repository</p>
+                        <p className="text-sm text-gray-500 mt-2">
+                          Publiczne repozytorium kodu
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  </a>
                   <div className="grid grid-cols-2 gap-4">
                     <div className="text-center p-4 bg-gray-800/30 rounded-lg">
                       <div className="text-2xl font-bold text-green-400 mb-1">
@@ -799,7 +798,7 @@ export default function WebsiteProjectPage() {
                   <div className="text-3xl font-bold text-purple-400 mb-2">
                     95+
                   </div>
-                  <div className="text-gray-400">Score Lighthouse</div>
+                  <div className="text-gray-400">Lighthouse Score</div>
                 </div>
               </div>
             </div>
@@ -813,9 +812,11 @@ export default function WebsiteProjectPage() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-6 md:mb-0">
               <h3 className="text-xl font-bold text-white mb-2">
-                Portfolio Website
+                Strona Portfolio
               </h3>
-              <p className="text-gray-500">Next.js + AI Development Project</p>
+              <p className="text-gray-500">
+                Projekt Strony Front-End w Next.js
+              </p>
             </div>
             <div className="flex gap-6">
               <Link
@@ -825,17 +826,17 @@ export default function WebsiteProjectPage() {
                 ← Powrót do Strony Głównej
               </Link>
               <Link
-                href="/projects/warehouse-robot"
+                href="/projects/zigbee-alarm"
                 className="text-gray-400 hover:text-white transition-colors"
               >
-                Warehouse Robot →
+                ZigBee Alarm →
               </Link>
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-gray-900 text-center">
             <p className="text-gray-600 text-sm">
-              © {new Date().getFullYear()} Portfolio Development. Demonstracja
-              nowoczesnego developmentu frontend z wykorzystaniem AI.
+              © {new Date().getFullYear()} Jarosław Wojciuk, Aplikacje Internetu
+              Rzeczy
             </p>
           </div>
         </div>

@@ -16,39 +16,44 @@ export default function Home() {
   const projects = [
     {
       id: "zigbee-alarm",
-      name: "ZigBee Alarm System",
+      name: "System Alarmowy ZigBee",
       description:
-        "Advanced IoT-based home security with Face ID and a Telegram Bot",
+        "Zaawansowane zabezpieczenia domu oparte na technologii IoT z funkcją Face ID i botem na Telegram",
       tags: ["ZigBee2MQTT", "Face ID", "Raspberry Pi 5", "Flask"],
       icon: <IconShieldCode className="h-6 w-6" />,
     },
     {
       id: "warehouse-robot",
-      name: "Autonomous Warehouse Robot",
+      name: "Autonomiczny Robot Magazynowy",
       description:
-        "Intelligent robotic system for autonomous navigation with LiDAR and UE5",
-      tags: ["ESP32-S3", "LiDAR", "Unreal Engine", "Autonomous"],
+        "Inteligentny system robotyczny do autonomicznej nawigacji z wykorzystaniem LiDAR i UE5",
+      tags: ["ESP32-S3", "LiDAR", "Unreal Engine"],
       icon: <IconRoute className="h-6 w-6" />,
     },
     {
       id: "sensor-array",
-      name: "Environmental Data Collection",
+      name: "Gromadzenie Danych Środowiskowych",
       description:
-        "Real-time IoT system for environmental monitoring with ESP8266 and InfluxDB",
+        "System IoT do monitorowania środowiska w czasie rzeczywistym z wykorzystaniem ESP8266 i InfluxDB",
       tags: ["ESP8266", "InfluxDB", "Python", "Real-time"],
       icon: <IconSeedling className="h-6 w-6" />,
     },
   ];
 
   const words = [
-    { text: "Build" },
-    { text: "Innovative" },
+    { text: "Twórz" },
+    { text: "Innowacyjne" },
+    { text: "Rozwiązania" },
     { text: "IoT" },
-    { text: "Solutions" },
-    { text: "Today." },
+    { text: "Już Dziś." },
   ];
 
-  const flipWords = ["smarter", "connected", "efficient", "intelligent"];
+  const flipWords = [
+    "inteligentniejszych",
+    "połączonych",
+    "wydajnych",
+    "inteligentnych",
+  ];
 
   return (
     <main className="relative min-h-screen bg-black overflow-hidden">
@@ -76,7 +81,7 @@ export default function Home() {
           <div className="mb-8">
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6">
               <span className="bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                IoT Innovation Lab
+                Laboratorium Innowacji IoT
               </span>
             </h1>
             <div className="h-1 w-24 bg-linear-to-r from-blue-500 to-purple-500 mx-auto rounded-full mb-8" />
@@ -87,9 +92,9 @@ export default function Home() {
             />
 
             <div className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed">
-              Creating <FlipWords words={flipWords} />
-              devices that transform everyday life through cutting-edge
-              technology and university research
+              Tworzenie <FlipWords words={flipWords} />
+              urządzeń, które zmieniają codzienne życie dzięki
+              najnowocześniejszej technologii i badaniom uniwersyteckim.
             </div>
           </div>
 
@@ -122,11 +127,11 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Featured <span className="text-blue-400">Projects</span>
+              Wybrane <span className="text-blue-400">Projekty</span>
             </h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              Discover our innovative IoT solutions built from scratch by
-              university students
+              Odkryj nasze innowacyjne rozwiązania IoT stworzone przez studentów
+              naszego uniwersytetu
             </p>
           </div>
 
@@ -158,7 +163,7 @@ export default function Home() {
                       </div>
                       <Link href={`/projects/${project.id}`}>
                         <button className="w-full py-2 px-4 bg-linear-to-r from-blue-600 to-purple-600 rounded-lg text-white font-medium hover:opacity-90 transition-opacity">
-                          View Details
+                          Zobacz Szczegóły
                         </button>
                       </Link>
                     </div>
@@ -183,12 +188,14 @@ export default function Home() {
               )}
             />
             <p className="text-lg font-bold md:text-xl text-gray-300 text-center leading-relaxed max-sm:w-full sm:w-[50%]">
-              Our multidisciplinary team combines expertise in{" "}
-              <span className="text-blue-400">embedded systems</span>,{" "}
-              <span className="text-purple-400">wireless communication</span>,
-              and <span className="text-green-400">visualization</span> to
-              create groundbreaking IoT solutions that address real-world
-              challenges.
+              Nasz multidyscyplinarny zespół łączy doświadczenie w zakresie{" "}
+              <span className="text-blue-400">systemów wbudowanych</span>,{" "}
+              <span className="text-purple-400">
+                komunikacji bezprzewodowej
+              </span>
+              , oraz <span className="text-green-400">wizualizacji</span>, aby
+              tworzyć przełomowe rozwiązania IoT, które odpowiadają na
+              rzeczywiste wyzwania.
             </p>
           </div>
         </div>
@@ -199,27 +206,22 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Innovate with Us?
+              Gotowy na innowacje razem z nami?
             </h2>
             <p className="text-gray-400 text-lg mb-8">
-              Join our IoT research group or collaborate on our next
-              groundbreaking project
+              Dołącz do naszej grupy badawczej zajmującej się Internetem rzeczy
+              lub współpracuj przy naszym kolejnym przełomowym projekcie.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="#team">
-                <button className="px-8 py-3 bg-linear-to-r from-purple-600 to-pink-600 rounded-full text-white font-medium hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300">
-                  Get in Touch
-                </button>
-              </Link>
               <Link href="#projects">
                 <button className="px-8 py-3 border border-gray-700 rounded-full text-white font-medium hover:bg-gray-800/50 transition-all duration-300">
-                  View All Projects
+                  Zobacz Wszystkie Projekty i Prezentacje
                 </button>
               </Link>
             </div>
             <p className="mt-12 text-gray-500 text-sm">
-              © {new Date().getFullYear()} University IoT Innovation Lab. All
-              rights reserved.
+              © {new Date().getFullYear()} Jarosław Wojciuk, Aplikacje Internetu
+              Rzeczy
             </p>
           </div>
         </div>

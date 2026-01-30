@@ -95,62 +95,63 @@ export default function ZigBeeAlarmPage() {
   const systemFlow = [
     {
       id: 1,
-      name: "Power On",
-      content: "System initialization and hardware boot sequence",
+      name: "Włączenie",
+      content: "Inicjalizacja systemu i sekwencja uruchamiania sprzętu",
     },
     {
       id: 2,
-      name: "Server Start",
-      content: "MQTT broker and Flask web server initialization",
+      name: "Uruchomienie Serwera",
+      content: "Inicjalizacja brokera MQTT i serwera internetowego Flask",
     },
     {
       id: 3,
-      name: "Sensor Detection",
-      content: "ZigBee sensors send real-time movement data",
+      name: "Wykrywanie Czujników",
+      content: "Czujniki ZigBee wysyłają dane o ruchu w czasie rzeczywistym",
     },
     {
       id: 4,
-      name: "Data Processing",
-      content: "Broker receives and processes subscribed topics",
+      name: "Przetwarzanie Danych",
+      content: "Broker odbiera i przetwarza subskrybowane tematy",
     },
     {
       id: 5,
-      name: "Security Check",
-      content: "System checks alarm arming status and user permissions",
+      name: "Kontrola Bezpieczeństwa",
+      content:
+        "System sprawdza stan uzbrojenia alarmu i uprawnienia użytkownika",
     },
     {
       id: 6,
-      name: "Action Trigger",
-      content: "Alarm activation if movement detected while armed",
+      name: "Wyzwalacz Akcji",
+      content: "Włączenie alarmu w przypadku wykrycia ruchu podczas uzbrojenia",
     },
   ];
 
   const features = [
     {
-      title: "Telegram Bot Integration",
+      title: "Integracja Bota Telegram",
       description:
-        "Remote alarm control via Telegram messages - arm/disarm, status checks, and real-time notifications from anywhere.",
+        "Zdalne sterowanie alarmem za pomocą wiadomości Telegram - uzbrajanie/rozbrajanie, sprawdzanie statusu i powiadomienia w czasie rzeczywistym z dowolnego miejsca.",
       icon: <IconDeviceMobile className="h-10 w-10" />,
       color: "from-blue-500 to-cyan-500",
     },
     {
-      title: "Multi-User System",
+      title: "System Wieloużytkownikowy",
       description:
-        "Individual accounts with different permission levels for personalized access control and alarm settings.",
+        "Indywidualne konta z różnymi poziomami uprawnień umożliwiające spersonalizowaną kontrolę dostępu i ustawienia alarmów.",
       icon: <IconUsers className="h-10 w-10" />,
       color: "from-purple-500 to-pink-500",
     },
     {
-      title: "Face ID Authentication",
+      title: "Uwierzytelnianie Za Pomocą Face ID",
       description:
-        "Face recognition module for password-free user authorization using camera, enhancing security and convenience.",
+        "Moduł rozpoznawania twarzy do autoryzacji użytkownika bez hasła za pomocą kamery, zwiększający bezpieczeństwo i wygodę.",
       icon: <IconCamera className="h-10 w-10" />,
       color: "from-green-500 to-emerald-500",
     },
     {
-      title: "ZigBee Wireless Network",
+      title: "Sieć Bezprzewodowa ZigBee",
       description:
-        "Reliable, low-power wireless communication between sensors and the central hub for flexible installation.",
+        "Niezawodna, energooszczędna komunikacja bezprzewodowa między czujnikami a centralnym hubem, umożliwiająca elastyczną instalację.",
       icon: <IconWifi className="h-10 w-10" />,
       color: "from-orange-500 to-red-500",
     },
@@ -187,14 +188,14 @@ export default function ZigBeeAlarmPage() {
             {/* Badge */}
             <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6">
               <span className="text-sm font-medium text-white">
-                IoT ZigBee Security Project
+                Projekt Bezpiecznego Systemu IoT ZigBee
               </span>
             </div>
 
             {/* Main Title */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
               <span className="bg-linear-to-r from-green-400 via-emerald-400 to-cyan-400 bg-clip-text text-transparent">
-                ZigBee Alarm System
+                System Alarmowy ZigBee
               </span>
             </h1>
 
@@ -202,8 +203,9 @@ export default function ZigBeeAlarmPage() {
 
             {/* Subtitle */}
             <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed">
-              Advanced IoT-based home security with multi-factor authentication,
-              remote management, and real-time monitoring
+              Zaawansowane zabezpieczenia domu oparte na technologii IoT z
+              uwierzytelnianiem wieloskładnikowym, zdalnym zarządzaniem i
+              monitorowaniem w czasie rzeczywistym
             </p>
 
             {/* Project Tags */}
@@ -233,13 +235,13 @@ export default function ZigBeeAlarmPage() {
                   as="button"
                   className="bg-black text-white flex items-center space-x-2 px-8 py-4 text-lg"
                 >
-                  <span>View Live Demo</span>
+                  <span>Zobacz Prezentację</span>
                   <IconArrowRight className="h-5 w-5" />
                 </HoverBorderGradient>
               </Link>
               <Link href="#architecture">
                 <button className="px-10 py-4 rounded-full w-full bg-linear-to-b from-green-600 to-emerald-600 text-white font-medium text-lg hover:shadow-2xl hover:shadow-green-500/30 transition-all duration-300">
-                  System Architecture
+                  Architektura Systemu
                 </button>
               </Link>
             </div>
@@ -252,12 +254,12 @@ export default function ZigBeeAlarmPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Project <span className="text-green-400">Overview</span>
+              <span className="text-green-400">Zarys Ogólny</span> Projektu
             </h2>
             <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-              An expansion of the existing alarm system based on Raspberry Pi
-              with ZigBee and MQTT protocols, adding new features useful for
-              alarm users.
+              Rozbudowa istniejącego systemu alarmowego opartego na Raspberry Pi
+              z protokołami ZigBee i MQTT, dodająca nowe funkcje przydatne dla
+              użytkowników alarmów.
             </p>
           </div>
 
@@ -265,7 +267,7 @@ export default function ZigBeeAlarmPage() {
             <div className="relative">
               <div className="relative bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8">
                 <h3 className="text-2xl font-bold text-white mb-6">
-                  Core Objectives
+                  Główne Cele
                 </h3>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
@@ -273,7 +275,8 @@ export default function ZigBeeAlarmPage() {
                       <IconShield className="h-5 w-5 text-green-400" />
                     </div>
                     <p className="text-gray-300">
-                      Extend existing alarm system with advanced features
+                      Rozszerzenie istniejącego systemu alarmowego o
+                      zaawansowane funkcje
                     </p>
                   </li>
                   <li className="flex items-start gap-3">
@@ -281,7 +284,7 @@ export default function ZigBeeAlarmPage() {
                       <IconWifi className="h-5 w-5 text-blue-400" />
                     </div>
                     <p className="text-gray-300">
-                      Implement remote control via Telegram bot
+                      Wdrożenie zdalnego sterowania za pomocą bota Telegram
                     </p>
                   </li>
                   <li className="flex items-start gap-3">
@@ -289,7 +292,8 @@ export default function ZigBeeAlarmPage() {
                       <IconUsers className="h-5 w-5 text-purple-400" />
                     </div>
                     <p className="text-gray-300">
-                      Add multi-user management with permission levels
+                      Dodaj zarządzanie wieloma użytkownikami z poziomami
+                      uprawnień
                     </p>
                   </li>
                   <li className="flex items-start gap-3">
@@ -297,7 +301,7 @@ export default function ZigBeeAlarmPage() {
                       <IconCamera className="h-5 w-5 text-cyan-400" />
                     </div>
                     <p className="text-gray-300">
-                      Integrate Face ID for enhanced security
+                      Zintegruj funkcję Face ID, aby zwiększyć bezpieczeństwo
                     </p>
                   </li>
                 </ul>
@@ -306,7 +310,7 @@ export default function ZigBeeAlarmPage() {
 
             <div>
               <h3 className="text-2xl font-bold text-white mb-6">
-                Technology Stack
+                Stos Technologiczny
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                 {technologyStack.map((tech) => (
@@ -334,7 +338,7 @@ export default function ZigBeeAlarmPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              System <span className="text-blue-400">Architecture</span>
+              <span className="text-blue-400">Architektura</span> Systemu
             </h2>
           </div>
 
@@ -527,47 +531,54 @@ export default function ZigBeeAlarmPage() {
             <div className="relative bg-linear-to-br from-gray-900 to-black border border-gray-800 rounded-2xl p-8 md:p-12 overflow-hidden">
               <div className="relative z-10">
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">
-                  Live System Demonstration
+                  Oryginalna Prezentacja
                 </h2>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                   <div>
                     <h3 className="text-xl font-bold text-white mb-4">
-                      Experience the System
+                      Poznaj System
                     </h3>
                     <ul className="space-y-3 mb-8">
                       <li className="flex items-center gap-3 text-gray-300">
                         <div className="h-2 w-2 bg-green-500 rounded-full"></div>
-                        Real-time sensor monitoring
+                        Monitorowanie czujników w czasie rzeczywistym
                       </li>
                       <li className="flex items-center gap-3 text-gray-300">
                         <div className="h-2 w-2 bg-blue-500 rounded-full"></div>
-                        Telegram bot interaction
+                        Interakcja z botem Telegram
                       </li>
                       <li className="flex items-center gap-3 text-gray-300">
                         <div className="h-2 w-2 bg-purple-500 rounded-full"></div>
-                        Face ID authentication demo
+                        Uwierzytelnianie za pomocą Face ID
                       </li>
                       <li className="flex items-center gap-3 text-gray-300">
                         <div className="h-2 w-2 bg-cyan-500 rounded-full"></div>
-                        Multi-user access control
+                        Kontrola dostępu wielu użytkowników
                       </li>
                     </ul>
-                    <Link href="/projects">
+                    <Link href="/">
                       <button className="w-full py-3 px-6 bg-linear-to-r from-green-600 to-blue-600 rounded-xl text-white font-medium hover:opacity-90 transition-opacity">
-                        View Other Projects
+                        Zobacz Inne Projekty
                       </button>
                     </Link>
                   </div>
                   <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-6">
-                    <div className="aspect-video bg-gray-800/50 rounded-lg flex items-center justify-center mb-4">
-                      <div className="text-center">
-                        <div className="text-6xl mb-4">🚀</div>
-                        <p className="text-gray-400">System Demo Interface</p>
+                    <a href="../presentations/zigbee-alarm.pdf">
+                      <div
+                        className="aspect-video bg-gray-800/50 rounded-lg flex items-center justify-center mb-4"
+                        style={{
+                          backgroundImage: `linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+                            url('../presentations/zigbee-alarm-thumb.jpg')`,
+                          backgroundSize: `cover`,
+                        }}
+                      >
+                        <div className="text-center">
+                          <p className="text-white-400">Zobacz Prezentację</p>
+                        </div>
                       </div>
-                    </div>
+                    </a>
                     <p className="text-gray-400 text-sm text-center">
-                      Interactive demonstration of the ZigBee alarm system
-                      functionality
+                      System sterowania alarmem oparty na Raspberry Pi
                     </p>
                   </div>
                 </div>
@@ -583,35 +594,31 @@ export default function ZigBeeAlarmPage() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-6 md:mb-0">
               <h3 className="text-xl font-bold text-white mb-2">
-                ZigBee Alarm System
+                System Alarmowy ZigBee
               </h3>
-              <p className="text-gray-500">University IoT Project</p>
+              <p className="text-gray-500">
+                Projekt Bezpiecznego Systemu IoT ZigBee
+              </p>
             </div>
             <div className="flex gap-6">
               <Link
                 href="/"
                 className="text-gray-400 hover:text-white transition-colors"
               >
-                ← Back to Home
+                ← Powrót do Strony Głównej
               </Link>
               <Link
-                href="#overview"
+                href="/projects/warehouse-robot"
                 className="text-gray-400 hover:text-white transition-colors"
               >
-                Project Overview
-              </Link>
-              <Link
-                href="#team"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                Meet the Team
+                Warehouse Robot →
               </Link>
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-gray-900 text-center">
             <p className="text-gray-600 text-sm">
-              © {new Date().getFullYear()} University IoT Innovation Lab. This
-              project demonstrates practical application of IoT technologies.
+              © {new Date().getFullYear()} Jarosław Wojciuk, Aplikacje Internetu
+              Rzeczy
             </p>
           </div>
         </div>

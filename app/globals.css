@@ -145,3 +145,7 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #444;
 }
+
+.mask-no-repeat {
+  pointer-events: none;
+}
